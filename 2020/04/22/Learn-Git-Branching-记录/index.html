@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="起因有一天 CP Editor 群内：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Learn Git Branching 记录">
+<meta property="og:url" content="https://github.com/crispycommand/crispycommand.github.io/2020/04/22/Learn-Git-Branching-%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="CrispyCommand&#39;s Blog">
+<meta property="og:description" content="起因有一天 CP Editor 群内：">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/04/22/XAVwt4J7LNHGuys.png">
+<meta property="article:published_time" content="2020-04-21T22:32:50.000Z">
+<meta property="article:modified_time" content="2020-07-22T15:36:38.989Z">
+<meta property="article:author" content="CrispyCommand">
+<meta property="article:tag" content="Git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/04/22/XAVwt4J7LNHGuys.png">
+
+<link rel="canonical" href="https://github.com/crispycommand/crispycommand.github.io/2020/04/22/Learn-Git-Branching-%E8%AE%B0%E5%BD%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Learn Git Branching 记录 | CrispyCommand's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">CrispyCommand's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">幻梦终醒 本无不散之宴</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-friend">
+
+    <a href="/friend" rel="section"><i class="fa fa-fw fa-users"></i>朋友</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/crispycommand/crispycommand.github.io/2020/04/22/Learn-Git-Branching-%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.jpg">
+      <meta itemprop="name" content="CrispyCommand">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CrispyCommand's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Learn Git Branching 记录
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-22 06:32:50" itemprop="dateCreated datePublished" datetime="2020-04-22T06:32:50+08:00">2020-04-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-22 23:36:38" itemprop="dateModified" datetime="2020-07-22T23:36:38+08:00">2020-07-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/04/22/Learn-Git-Branching-%E8%AE%B0%E5%BD%95/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/22/Learn-Git-Branching-%E8%AE%B0%E5%BD%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>有一天 CP Editor 群内：</p>
+<a id="more"></a>
+
+<p><img src="https://i.loli.net/2020/04/22/XAVwt4J7LNHGuys.png"></p>
+<p>想到我对 Git 也是一窍不通，所以就来学了。</p>
+<h3 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h3><p><code>git commit</code> 可以用来创建一个新的提交记录。</p>
+<p>过关命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git commit</span><br><span class="line">$ git commit</span><br></pre></td></tr></table></figure>
+
+<p><code>git branch &lt;name&gt;</code> 可以用来创建分支，<code>git checkout &lt;name&gt;</code> 可以切换分支。</p>
+<p>可以通过 <code>git checkout -b &lt;name&gt;</code> 来在创建新分支的同时切换到新分支。</p>
+<p>过关命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b bugFix</span><br></pre></td></tr></table></figure>
+
+<p><code>git merge &lt;name&gt;</code> 可以将分支合并到当前分支。</p>
+<p>过关命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b bugFix</span><br><span class="line">$ git commit</span><br><span class="line">$ git checkout master</span><br><span class="line">$ git commit</span><br><span class="line">$ git merge bugFix</span><br></pre></td></tr></table></figure>
+
+<p>另外一种合并分支的方法是 <code>git rebase &lt;name&gt;</code>。</p>
+<p>某种程度上可以认为是将指向 LCA 的节点的指针指向另外一个节点。</p>
+<p>过关命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b bugFix</span><br><span class="line">$ git commit</span><br><span class="line">$ git checkout master</span><br><span class="line">$ git commit</span><br><span class="line">$ git checkout bugFix</span><br><span class="line">$ git rebase master</span><br></pre></td></tr></table></figure>
+
+<h3 id="高级篇"><a href="#高级篇" class="headerlink" title="高级篇"></a>高级篇</h3><p>HEAD 指向的是当前分支上最近一次提交记录，可以把它当成某种指针。</p>
+<p>如果要指向分支上的历史版本的记录，可以使用 <code>git checkout &lt;hash-value&gt;</code> 来改变 HEAD 的指向。</p>
+<p>过关命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout C4</span><br></pre></td></tr></table></figure>
+
+<p>哈希值太长怎么办？</p>
+<p>另外一种方式是使用相对引用（^）。这里介绍两个简单的用法：</p>
+<ul>
+<li>使用 <code>^</code> 向上移动一个提交记录</li>
+<li>使用 <code>~&lt;num&gt;</code> 向上移动多个提交记录</li>
+</ul>
+<p>将操作符 <code>^</code> 加在引用名称后面，表示它的父节点。</p>
+<p>过关命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout bugFix^</span><br></pre></td></tr></table></figure>
+
+<p>我们可以用这些命令来强制修改分支位置。如命令 <code>git branch -f master HEAD~3</code>。</p>
+<p>这个命令会将 master 分支强制指向 HEAD 的第 3 级父节点。</p>
+<p>过关命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -f master C6</span><br><span class="line">$ git branch -f bugFix HEAD~2</span><br><span class="line">$ git checkout HEAD^</span><br></pre></td></tr></table></figure>
+
+<p>撤销变更的方法主要有两种，<code>git reset</code> 和 <code>git revert</code>。</p>
+<p><code>git reset</code> 可以让当前分支往回移，但只使用于本地。</p>
+<p><code>git revert</code> 则是新建一个提交记录，只不过这是用来撤销用的新记录，内容与要撤销的父节点内容相同。</p>
+<p>过关命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git reset HEAD^</span><br><span class="line">$ git checkout pushed</span><br><span class="line">$ git revert HEAD</span><br></pre></td></tr></table></figure>
+
+<h3 id="移动提交记录"><a href="#移动提交记录" class="headerlink" title="移动提交记录"></a>移动提交记录</h3><p><code>git cherry-pick</code> 可以自由修改提交树，将目标提交记录直接放在当前位置的下面。</p>
+<p>过关命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git cherry-pick C3 C4 C7</span><br></pre></td></tr></table></figure>
+
+<p>但别忘了这里的 C3 C4 C7 都是哈希值，真实的哈希值可是长多了。</p>
+<p>另外一种方法是使用交互式的 rebase（<code>git rebase -i</code>）。</p>
+<p>这个是 UI 界面，很直观。</p>
+<p>过关命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git rebase -i HEAD~4</span><br></pre></td></tr></table></figure>
+
+<p>然后在 UI 界面里进行操作即可。</p>
+<h3 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h3><p>第一关很简单。</p>
+<p>过关命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">$ git cherry-pick C4</span><br></pre></td></tr></table></figure>
+
+<p>考虑一种情况：</p>
+<p>我们在某分支上进行了一次提交，然后又创建了新分支，然后又提交了一次。</p>
+<p>此时想修改最开始的提交记录，怎么做呢？</p>
+<p>我们可以先用 <code>git rabase -i</code> 进行排序，然后进行修改，然后再恢复到原来的顺序。</p>
+<p>过关命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git rebase -i HEAD^^</span><br><span class="line">$ git commit --amend</span><br><span class="line">$ git rebase -i HEAD^^</span><br><span class="line">$ git rebase caption master</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>git cherry-pick</code> 又是怎么做的呢？</p>
+<p>这里直接给出答案：</p>
+<p>过关命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">$ git cherry-pick C2</span><br><span class="line">$ git commit --amend</span><br><span class="line">$ git cherry-pick C3</span><br></pre></td></tr></table></figure>
+
+<p>我们可以用 <code>git tag</code> 来对一个提交记录作一个类似标记的东西。</p>
+<p>过关命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git tag v0 C1</span><br><span class="line">$ git tag v1 C2</span><br><span class="line">$ git checkout C2</span><br></pre></td></tr></table></figure>
+
+<p>可以用 <code>git describe &lt;ref&gt;</code> 来描述最近的 tag。</p>
+<p>输出结果为 <code>&lt;tag&gt;_&lt;numCommits&gt;_g&lt;hash&gt;</code>。tag 表示的是离 ref 最近的标签，numCommits 是表示这个 ref 与 tag 相差有多少个提交记录，hash 表示的是所给定的 ref 所表示的提交记录哈希值的前几位。</p>
+<p>过关命令略。</p>
+<h3 id="高级话题"><a href="#高级话题" class="headerlink" title="高级话题"></a>高级话题</h3><p>在需要多次 rebase 时，记得最后更新 master 分支。</p>
+<p>过关命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git rebase master bugFix</span><br><span class="line">$ git rebase bugFix side</span><br><span class="line">$ git rebase side another</span><br><span class="line">$ git rebase another master</span><br></pre></td></tr></table></figure>
+
+<p>还记得 <code>^</code> 吗？其实跟 <code>~</code> 一样可以在后面加上数字，当同一个节点有多个父亲时，可以选择移动到的是第几个父亲。</p>
+<p>过关命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch bugWork master ^^2^</span><br></pre></td></tr></table></figure>
+
+<p><code>git cherry-pick</code> 天下第一！</p>
+<p>过关命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout one</span><br><span class="line">$ git cherry-pick C4 C3 C2</span><br><span class="line">$ git cherry-pick two</span><br><span class="line">$ git cherry-pick C5 C4 C3 C2</span><br><span class="line">$ git branch -f three C2</span><br></pre></td></tr></table></figure>
+
+<p>Git 的本地操作基本上就是这些了，远程操作等到考完二模再学吧（哭）。</p>
+<p>二模前一天晚上想找个休闲的方式，所以选择了这个（雾）。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Git/" rel="tag"># Git</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/20/EZEC-1-%E5%87%BA%E9%A2%98/" rel="prev" title="[EZEC - 1] 出题">
+      <i class="fa fa-chevron-left"></i> [EZEC - 1] 出题
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/17/%E6%97%A0%E9%A2%98/" rel="next" title="无题">
+      无题 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#起因"><span class="nav-number">1.</span> <span class="nav-text">起因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基础篇"><span class="nav-number">2.</span> <span class="nav-text">基础篇</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高级篇"><span class="nav-number">3.</span> <span class="nav-text">高级篇</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动提交记录"><span class="nav-number">4.</span> <span class="nav-text">移动提交记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#杂项"><span class="nav-number">5.</span> <span class="nav-text">杂项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高级话题"><span class="nav-number">6.</span> <span class="nav-text">高级话题</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="CrispyCommand"
+      src="/images/header.jpg">
+  <p class="site-author-name" itemprop="name">CrispyCommand</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/CrispyCommand" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;CrispyCommand"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:crispycommand@gmail.com" title="E-Mail → mailto:crispycommand@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/CrispyCommand" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;CrispyCommand" rel="noopener" target="_blank"><i class="fa fa-fw fa-telegram"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=1293061733&site=qq&menu=yes" title="QQ → http:&#x2F;&#x2F;wpa.qq.com&#x2F;msgrd?v&#x3D;3&amp;uin&#x3D;1293061733&amp;site&#x3D;qq&amp;menu&#x3D;yes" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CrispyCommand</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '9e4L54cfN4leVgFBXutW2fNg-gzGzoHsz',
+      appKey     : 'j67X21d5vGTJ5qbhavAv5YYY',
+      placeholder: "Leave your comments",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
