@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>[CSP2019] 网格图</title>
+      <link href="/2020/07/29/CSP2019-%E7%BD%91%E6%A0%BC%E5%9B%BE/"/>
+      <url>/2020/07/29/CSP2019-%E7%BD%91%E6%A0%BC%E5%9B%BE/</url>
+      
+        <content type="html"><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><a href="https://www.luogu.com.cn/problem/P5687" target="_blank" rel="noopener">题目链接</a></p><p>题目大意：给定一个 $n \times m$ 的网格图，点 $(i, j)$ 与 $(i, j + 1)$ 间有一条权值为 $a_i$ 的边，点 $(i, j)$ 与 $(i + 1, j)$ 间有一条权值为 $b_j$ 的边，求出这个网格图的最小生成树。$3 \le n, m \le 3 \times 10^5, 1 \le a_i, b_j \le 10^5$。</p><a id="more"></a><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>暴力做法直接 Kruskal 即可。</p><p>考虑 Kruskal 的过程：找出没被取过的最小的边加入，并且加入后不成环。</p><p>这道题目每一行和每一列的值是相同的，所以可以一行或者一列的来讨论。显然边在一整行一整列的加入时是最优的。</p><p>接下来考虑怎么才能不形成环。</p><p>最小的行和最小的列显然不形成环，所以全部加上。</p><p>设现在已经取了 $r$ 行 $c$ 列。</p><p>对于一条将要被加入的行，已经有 $c$ 个点在生成树中，要连的边的总数即为 $m - c$，否则就会与已经连的边形成环。</p><p>注意开 <code>long long</code>。</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> <span class="title">read</span>(<span class="title">T</span> &amp;<span class="title">x</span>) &#123;</span></span><br><span class="line">    x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch))    &#123; f |= ch == <span class="string">'-'</span>; ch = getchar(); &#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))     &#123; x = (x &lt;&lt; <span class="number">1</span>) + (x &lt;&lt; <span class="number">3</span>) + (ch ^ <span class="number">48</span>); ch = getchar(); &#125;</span><br><span class="line">    x = f ? -x : x;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"></span><br><span class="line">LL ans;</span><br><span class="line">LL a[<span class="number">300010</span>], b[<span class="number">300010</span>];</span><br><span class="line"><span class="keyword">int</span> n, m, r, c, x, y;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    read(n), read(m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)    read(a[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i)    read(b[i]);</span><br><span class="line">    <span class="built_in">std</span>::sort(a + <span class="number">1</span>, a + n + <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">std</span>::sort(b + <span class="number">1</span>, b + m + <span class="number">1</span>);</span><br><span class="line">    ans = a[<span class="number">1</span>] * (m - <span class="number">1</span>) + b[<span class="number">1</span>] * (n - <span class="number">1</span>);</span><br><span class="line">    r = <span class="number">1</span>, c = <span class="number">1</span>, x = <span class="number">2</span>, y = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span> (x &lt;= n &amp;&amp; y &lt;= m) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a[x] &lt;= b[y])   ans += a[x++] * (m - c), ++r;</span><br><span class="line">        <span class="keyword">else</span>    ans += b[y++] * (n - r), ++c;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> OI </category>
+          
+          <category> 图论 </category>
+          
+          <category> 最小生成树 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>[NOIp2006] 能量项链</title>
       <link href="/2020/07/25/NOIp2006-%E8%83%BD%E9%87%8F%E9%A1%B9%E9%93%BE/"/>
       <url>/2020/07/25/NOIp2006-%E8%83%BD%E9%87%8F%E9%A1%B9%E9%93%BE/</url>
