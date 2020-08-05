@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="题目题目链接">
+  <meta name="description" content="题目题目链接 题目大意：给出长度为 $n$ 的 $01$ 字符串 $s$，要求将其划分成个数最少的子序列使得每个子序列中相同的数不相邻，如 $101010$。输出个数最少的一种划分方案。$1 \le n \le 2 \cdot 10^5$。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[NOI1995] 石子合并">
-<meta property="og:url" content="https://github.com/crispycommand/crispycommand.github.io/2019/11/27/NOI1995-%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/index.html">
+<meta property="og:title" content="[CF1399D] Binary String To Subsequences">
+<meta property="og:url" content="https://github.com/crispycommand/crispycommand.github.io/2020/08/06/CF1399D-Binary-String-To-Subsequences/index.html">
 <meta property="og:site_name" content="CrispyCommand&#39;s Blog">
-<meta property="og:description" content="题目题目链接">
+<meta property="og:description" content="题目题目链接 题目大意：给出长度为 $n$ 的 $01$ 字符串 $s$，要求将其划分成个数最少的子序列使得每个子序列中相同的数不相邻，如 $101010$。输出个数最少的一种划分方案。$1 \le n \le 2 \cdot 10^5$。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-11-27T04:02:26.000Z">
-<meta property="article:modified_time" content="2020-07-22T15:36:39.171Z">
+<meta property="article:published_time" content="2020-08-05T19:41:03.000Z">
+<meta property="article:modified_time" content="2020-08-05T19:48:46.005Z">
 <meta property="article:author" content="CrispyCommand">
-<meta property="article:tag" content="NOI">
+<meta property="article:tag" content="Codeforces">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://github.com/crispycommand/crispycommand.github.io/2019/11/27/NOI1995-%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/">
+<link rel="canonical" href="https://github.com/crispycommand/crispycommand.github.io/2020/08/06/CF1399D-Binary-String-To-Subsequences/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>[NOI1995] 石子合并 | CrispyCommand's Blog</title>
+  <title>[CF1399D] Binary String To Subsequences | CrispyCommand's Blog</title>
   
 
 
@@ -200,7 +200,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/crispycommand/crispycommand.github.io/2019/11/27/NOI1995-%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/crispycommand/crispycommand.github.io/2020/08/06/CF1399D-Binary-String-To-Subsequences/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/header.jpg">
@@ -213,7 +213,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [NOI1995] 石子合并
+          [CF1399D] Binary String To Subsequences
         </h1>
 
         <div class="post-meta">
@@ -223,7 +223,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-11-27 12:02:26" itemprop="dateCreated datePublished" datetime="2019-11-27T12:02:26+08:00">2019-11-27</time>
+              <time title="创建时间：2020-08-06 03:41:03" itemprop="dateCreated datePublished" datetime="2020-08-06T03:41:03+08:00">2020-08-06</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -235,11 +235,11 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/OI/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="url" rel="index"><span itemprop="name">动态规划</span></a>
+                  <a href="/categories/OI/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/OI/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8C%BA%E9%97%B4-DP/" itemprop="url" rel="index"><span itemprop="name">区间 DP</span></a>
+                  <a href="/categories/OI/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%98%9F%E5%88%97/" itemprop="url" rel="index"><span itemprop="name">队列</span></a>
                 </span>
             </span>
 
@@ -252,8 +252,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/11/27/NOI1995-%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/27/NOI1995-%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/08/06/CF1399D-Binary-String-To-Subsequences/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/06/CF1399D-Binary-String-To-Subsequences/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -263,7 +263,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -282,24 +282,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><a href="https://www.luogu.com.cn/problem/P1880" target="_blank" rel="noopener">题目链接</a></p>
+        <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><a href="https://codeforces.com/contest/1399/problem/D" target="_blank" rel="noopener">题目链接</a></p>
+<p>题目大意：给出长度为 $n$ 的 $01$ 字符串 $s$，要求将其划分成个数最少的子序列使得每个子序列中相同的数不相邻，如 $101010$。输出个数最少的一种划分方案。$1 \le n \le 2 \cdot 10^5$。</p>
 <a id="more"></a>
 
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>首先是个人都可以想到，这道题需要进行环状的处理。</p>
-<p>然后可以一眼看出这是一道区间DP的裸题。</p>
-<p>可以想到首先枚举每个区间的长度，从 $2$ 到 $n$，然后对于每个长度，枚举每个符合长度的区间。</p>
-<p>这里可以想到，每个区间的长度就是 $2n - r + 1$，右端点就是 $i + r - 1$。</p>
-<p>然后从左端点到右端点枚举，进行转移。</p>
-<p>设 $f_{i, j}$ 表示区间 $[i, j]$ 的最大值或最小值。</p>
-<p>那么状态转移方程（以求最大值为例）：</p>
-<p>$$f_{i, j} = \max { f_{i, k} + f_{k + 1, j} + \sum_{l=i}^{j}a_l }$$</p>
-<p>最小值同理。</p>
-<p>前缀和优化后时间复杂度为 $O(n^3)$。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> n, sum[<span class="number">310</span>], a[<span class="number">310</span>], f1[<span class="number">310</span>][<span class="number">310</span>], f2[<span class="number">310</span>][<span class="number">310</span>], max = <span class="number">-1</span>, min = <span class="number">999999999</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">d</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> sum[r] - sum[l - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    	a[i + n] = a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n * <span class="number">2</span>; ++i)</span><br><span class="line">    	sum[i] = sum[i - <span class="number">1</span>] + a[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> r = <span class="number">2</span>; r &lt;= n; ++r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">2</span> * n - r + <span class="number">1</span>; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> j = i + r - <span class="number">1</span>;</span><br><span class="line">            f2[i][j] = <span class="number">999999999</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = i; k &lt; j; ++k)</span><br><span class="line">            &#123;</span><br><span class="line">                f1[i][j] = <span class="built_in">std</span>::max(f1[i][j], f1[i][k] + f1[k + <span class="number">1</span>][j] + d(i, j));</span><br><span class="line">                f2[i][j] = <span class="built_in">std</span>::min(f2[i][j], f2[i][k] + f2[k + <span class="number">1</span>][j] + d(i, j));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">    	max = <span class="built_in">std</span>::max(max, f1[i][i + n - <span class="number">1</span>]);</span><br><span class="line">    	min = <span class="built_in">std</span>::min(min, f2[i][i + n - <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; min &lt;&lt; <span class="string">"\n"</span> &lt;&lt; max &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>近期决定把学的DP复习一下，写一些题解。</p>
-<p><del>毕竟假期一大堆代码都是照着题解写的。</del></p>
-
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>感谢 woshiluo 神仙（</p>
+<p>划分的方法其实是很显然的，主要是怎么实现。</p>
+<p>考虑构造两个队列，分别存当前以 $1$ 结尾和以 $0$ 结尾的子序列的编号。</p>
+<p>然后我相信大家都会做了。剩下的就是按照题意模拟了。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> <span class="title">read</span>(<span class="title">T</span> &amp;<span class="title">x</span>) &#123;</span></span><br><span class="line">    x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch))    &#123; f |= ch == <span class="string">'-'</span>; ch = getchar(); &#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))     &#123; x = (x &lt;&lt; <span class="number">1</span>) + (x &lt;&lt; <span class="number">3</span>) + (ch ^ <span class="number">48</span>); ch = getchar(); &#125;</span><br><span class="line">    x = f ? -x : x;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> ans[<span class="number">200010</span>];</span><br><span class="line"><span class="keyword">char</span> a[<span class="number">200010</span>];</span><br><span class="line"><span class="keyword">int</span> t, n, s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    read(t);</span><br><span class="line">    <span class="keyword">while</span> (t--) &#123;</span><br><span class="line">        read(n);</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q0, q1;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; a + <span class="number">1</span>;</span><br><span class="line">        s = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[i] == <span class="string">'0'</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (q1.empty()) &#123;</span><br><span class="line">                    q0.push(++s);</span><br><span class="line">                    ans[i] = s;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    ans[i] = q1.front();</span><br><span class="line">                    q0.push(q1.front());</span><br><span class="line">                    q1.pop();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (q0.empty()) &#123;</span><br><span class="line">                    q1.push(++s);</span><br><span class="line">                    ans[i] = s;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    ans[i] = q0.front();</span><br><span class="line">                    q1.push(q0.front());</span><br><span class="line">                    q0.pop();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, s);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)    <span class="built_in">printf</span>(<span class="string">"%d "</span>, ans[i]);</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -308,7 +299,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/NOI/" rel="tag"># NOI</a>
+              <a href="/tags/Codeforces/" rel="tag"># Codeforces</a>
           </div>
 
         
@@ -317,13 +308,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/11/25/JLOI2011-%E9%A3%9E%E8%A1%8C%E8%B7%AF%E7%BA%BF/" rel="prev" title="[JLOI2011] 飞行路线">
-      <i class="fa fa-chevron-left"></i> [JLOI2011] 飞行路线
+    <a href="/2020/08/04/CF52C-Circular-RMQ/" rel="prev" title="[CF52C] Circular RMQ">
+      <i class="fa fa-chevron-left"></i> [CF52C] Circular RMQ
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2019/12/10/SCOI2011-%E7%B3%96%E6%9E%9C/" rel="next" title="[SCOI2011] 糖果">
-      [SCOI2011] 糖果 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -383,7 +371,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后记"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -412,7 +400,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
