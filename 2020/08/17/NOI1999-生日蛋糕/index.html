@@ -33,7 +33,7 @@
 <meta property="og:description" content="题目题目链接 题目大意：制作一个体积为 $N \pi$ 的 $M$ 层生日蛋糕，每层都是一个圆柱体。设从下往上数第 $i(1 \le i \le M)$ 层蛋糕是半径为 $R_i$，高度为 $H_i$ 的圆柱。当 $i &lt; M$ 时，要求 $R_i &gt; R_{i + 1}$ 且 $H_i &gt; H_{i + 1}$，找出一种制作方案使得外表面面积 $Q$ 最小，输出 $\dfrac">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-16T19:54:38.000Z">
-<meta property="article:modified_time" content="2020-08-16T20:33:07.690Z">
+<meta property="article:modified_time" content="2020-08-16T20:37:34.587Z">
 <meta property="article:author" content="CrispyCommand">
 <meta property="article:tag" content="NOI">
 <meta name="twitter:card" content="summary">
@@ -289,6 +289,8 @@
       
         <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><a href="https://www.luogu.com.cn/problem/P1731" target="_blank" rel="noopener">题目链接</a></p>
 <p>题目大意：制作一个体积为 $N \pi$ 的 $M$ 层生日蛋糕，每层都是一个圆柱体。设从下往上数第 $i(1 \le i \le M)$ 层蛋糕是半径为 $R_i$，高度为 $H_i$ 的圆柱。当 $i &lt; M$ 时，要求 $R_i &gt; R_{i + 1}$ 且 $H_i &gt; H_{i + 1}$，找出一种制作方案使得外表面面积 $Q$ 最小，输出 $\dfrac{Q}{\pi}$。$N \le 2 \times 10^4, M \le 15$。</p>
+<a id="more"></a>
+
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>朴素的暴力在 $2 \times 10^4$ 面前会被吊起来打。</p>
 <p>由于 $H_i &gt; 1$，又因为 $H_i &gt; H_{i + 1}$，所以第 $i$ 层的高度至少为 $i$。半径同理。</p>
 <p>我们还可以这样推算出每一层的最小体积和最小表面积。</p>
