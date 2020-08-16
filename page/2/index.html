@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+  <!-- require APlayer -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
@@ -701,7 +706,10 @@
 
       
           <p>大概这就是命运吧。</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=41416774&auto=0&height=66"></iframe>
+<p><meting-js
+    id="41416774"
+    server="netease"
+    type="song"><br></meting-js></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/06/17/%E6%97%A0%E9%A2%98/#more" rel="contents">
@@ -1439,7 +1447,6 @@
 
 
 <script src="/js/next-boot.js"></script>
-
 
 
 
