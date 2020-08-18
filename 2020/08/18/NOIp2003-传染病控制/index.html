@@ -25,20 +25,20 @@
     var CONFIG = {"hostname":"crispycommand.moe","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="题目题目链接 题目大意：给定长度为 $n$ 的序列和 $m$ 次操作，要求支持区间开方，区间求和。$1 \le n, m \le 10^5$，序列中的数 $0 &lt; a_i \le 10^{12}$。">
+  <meta name="description" content="题目题目链接 题目大意：有一种病毒的传播途径是树型的，一个人只能被特定的人传染。每一轮传播周期后可以切断一条传播途径，求出可能的最少的被感染人数。树的大小 $1 \le n \le 300$。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[洛谷 P4145] 上帝造题的七分钟2 &#x2F; 花神游历各国">
-<meta property="og:url" content="https://crispycommand.moe/2020/07/30/%E6%B4%9B%E8%B0%B7-P4145-%E4%B8%8A%E5%B8%9D%E9%80%A0%E9%A2%98%E7%9A%84%E4%B8%83%E5%88%86%E9%92%9F2-%E8%8A%B1%E7%A5%9E%E6%B8%B8%E5%8E%86%E5%90%84%E5%9B%BD/index.html">
+<meta property="og:title" content="[NOIp2003] 传染病控制">
+<meta property="og:url" content="https://crispycommand.moe/2020/08/18/NOIp2003-%E4%BC%A0%E6%9F%93%E7%97%85%E6%8E%A7%E5%88%B6/index.html">
 <meta property="og:site_name" content="CrispyCommand&#39;s Blog">
-<meta property="og:description" content="题目题目链接 题目大意：给定长度为 $n$ 的序列和 $m$ 次操作，要求支持区间开方，区间求和。$1 \le n, m \le 10^5$，序列中的数 $0 &lt; a_i \le 10^{12}$。">
+<meta property="og:description" content="题目题目链接 题目大意：有一种病毒的传播途径是树型的，一个人只能被特定的人传染。每一轮传播周期后可以切断一条传播途径，求出可能的最少的被感染人数。树的大小 $1 \le n \le 300$。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-07-29T21:56:21.000Z">
-<meta property="article:modified_time" content="2020-07-29T22:10:15.438Z">
+<meta property="article:published_time" content="2020-08-18T10:40:36.000Z">
+<meta property="article:modified_time" content="2020-08-18T10:50:55.744Z">
 <meta property="article:author" content="CrispyCommand">
-<meta property="article:tag" content="洛谷">
+<meta property="article:tag" content="NOIp">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://crispycommand.moe/2020/07/30/%E6%B4%9B%E8%B0%B7-P4145-%E4%B8%8A%E5%B8%9D%E9%80%A0%E9%A2%98%E7%9A%84%E4%B8%83%E5%88%86%E9%92%9F2-%E8%8A%B1%E7%A5%9E%E6%B8%B8%E5%8E%86%E5%90%84%E5%9B%BD/">
+<link rel="canonical" href="https://crispycommand.moe/2020/08/18/NOIp2003-%E4%BC%A0%E6%9F%93%E7%97%85%E6%8E%A7%E5%88%B6/">
 
 
 <script id="page-configurations">
@@ -51,7 +51,7 @@
   };
 </script>
 
-  <title>[洛谷 P4145] 上帝造题的七分钟2 / 花神游历各国 | CrispyCommand's Blog</title>
+  <title>[NOIp2003] 传染病控制 | CrispyCommand's Blog</title>
   
 
 
@@ -205,7 +205,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://crispycommand.moe/2020/07/30/%E6%B4%9B%E8%B0%B7-P4145-%E4%B8%8A%E5%B8%9D%E9%80%A0%E9%A2%98%E7%9A%84%E4%B8%83%E5%88%86%E9%92%9F2-%E8%8A%B1%E7%A5%9E%E6%B8%B8%E5%8E%86%E5%90%84%E5%9B%BD/">
+    <link itemprop="mainEntityOfPage" href="https://crispycommand.moe/2020/08/18/NOIp2003-%E4%BC%A0%E6%9F%93%E7%97%85%E6%8E%A7%E5%88%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/header.jpg">
@@ -218,7 +218,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [洛谷 P4145] 上帝造题的七分钟2 / 花神游历各国
+          [NOIp2003] 传染病控制
         </h1>
 
         <div class="post-meta">
@@ -228,7 +228,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-07-30 05:56:21" itemprop="dateCreated datePublished" datetime="2020-07-30T05:56:21+08:00">2020-07-30</time>
+              <time title="创建时间：2020-08-18 18:40:36" itemprop="dateCreated datePublished" datetime="2020-08-18T18:40:36+08:00">2020-08-18</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -240,11 +240,11 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/OI/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                  <a href="/categories/OI/%E6%90%9C%E7%B4%A2/" itemprop="url" rel="index"><span itemprop="name">搜索</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/OI/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%AE%B5%E6%A0%91/" itemprop="url" rel="index"><span itemprop="name">线段树</span></a>
+                  <a href="/categories/OI/%E6%90%9C%E7%B4%A2/DFS/" itemprop="url" rel="index"><span itemprop="name">DFS</span></a>
                 </span>
             </span>
 
@@ -257,8 +257,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/07/30/%E6%B4%9B%E8%B0%B7-P4145-%E4%B8%8A%E5%B8%9D%E9%80%A0%E9%A2%98%E7%9A%84%E4%B8%83%E5%88%86%E9%92%9F2-%E8%8A%B1%E7%A5%9E%E6%B8%B8%E5%8E%86%E5%90%84%E5%9B%BD/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/30/%E6%B4%9B%E8%B0%B7-P4145-%E4%B8%8A%E5%B8%9D%E9%80%A0%E9%A2%98%E7%9A%84%E4%B8%83%E5%88%86%E9%92%9F2-%E8%8A%B1%E7%A5%9E%E6%B8%B8%E5%8E%86%E5%90%84%E5%9B%BD/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/08/18/NOIp2003-%E4%BC%A0%E6%9F%93%E7%97%85%E6%8E%A7%E5%88%B6/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/18/NOIp2003-%E4%BC%A0%E6%9F%93%E7%97%85%E6%8E%A7%E5%88%B6/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -268,7 +268,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2k</span>
+              <span>1.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -287,18 +287,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><a href="https://www.luogu.com.cn/problem/P4145" target="_blank" rel="noopener">题目链接</a></p>
-<p>题目大意：给定长度为 $n$ 的序列和 $m$ 次操作，要求支持区间开方，区间求和。$1 \le n, m \le 10^5$，序列中的数 $0 &lt; a_i \le 10^{12}$。</p>
+        <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><a href="https://www.luogu.com.cn/problem/P1041" target="_blank" rel="noopener">题目链接</a></p>
+<p>题目大意：有一种病毒的传播途径是树型的，一个人只能被特定的人传染。每一轮传播周期后可以切断一条传播途径，求出可能的最少的被感染人数。树的大小 $1 \le n \le 300$。</p>
 <a id="more"></a>
 
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>每次听数据结构都要把这道题拿出来说……</p>
-<p>考虑区间开方：至少在我的认知范围内，没有比暴力更优的做法。</p>
-<p>注意到开方其实是会让一个数急剧缩小的，$10^{12}$ 只需要开 $6$ 次平方就可以变成 $1$，然后再对 $1$ 开方就没有什么用了。</p>
-<p>所以我们可以暴力开方，如果一段区间内的所有数都是 $1$ 就直接不管他。</p>
-<p>实现的话可以维护一个最大值，如果区间最大值是 $1$ 就不继续修改。</p>
-<p>注意开 <code>long long</code>，然后是喜闻乐见的特判 $l &gt; r$。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> <span class="title">read</span>(<span class="title">T</span> &amp;<span class="title">x</span>) &#123;</span></span><br><span class="line">    x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch))    &#123; f |= ch == <span class="string">'-'</span>; ch = getchar(); &#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))     &#123; x = (x &lt;&lt; <span class="number">1</span>) + (x &lt;&lt; <span class="number">3</span>) + (ch ^ <span class="number">48</span>); ch = getchar(); &#125;</span><br><span class="line">    x = f ? -x : x;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    LL v, maxv;</span><br><span class="line">    <span class="keyword">int</span> l, r;</span><br><span class="line">&#125; t[<span class="number">400010</span>];</span><br><span class="line"></span><br><span class="line">LL a[<span class="number">100010</span>];</span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lson</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123; <span class="keyword">return</span> x &lt;&lt; <span class="number">1</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">rson</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123; <span class="keyword">return</span> x &lt;&lt; <span class="number">1</span> | <span class="number">1</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pushUp</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    t[x].v = t[lson(x)].v + t[rson(x)].v;</span><br><span class="line">    t[x].maxv = <span class="built_in">std</span>::max(t[lson(x)].maxv, t[rson(x)].maxv);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">buildTree</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    t[x].l = l, t[x].r = r;</span><br><span class="line">    <span class="keyword">if</span> (l == r) &#123;</span><br><span class="line">        t[x].v = t[x].maxv = a[l];</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    buildTree(lson(x), l, mid), buildTree(rson(x), mid + <span class="number">1</span>, r);</span><br><span class="line">    pushUp(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">modify</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (t[x].l == t[x].r) &#123;</span><br><span class="line">        t[x].v = <span class="built_in">sqrt</span>(t[x].v);</span><br><span class="line">        t[x].maxv = <span class="built_in">sqrt</span>(t[x].maxv);</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> mid = (t[x].l + t[x].r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (l &lt;= mid &amp;&amp; t[lson(x)].maxv &gt; <span class="number">1</span>)    modify(lson(x), l, r);</span><br><span class="line">    <span class="keyword">if</span> (r &gt; mid &amp;&amp; t[rson(x)].maxv &gt; <span class="number">1</span>)     modify(rson(x), l, r);</span><br><span class="line">    pushUp(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">LL <span class="title">query</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &lt;= t[x].l &amp;&amp; r &gt;= t[x].r) <span class="keyword">return</span> t[x].v;</span><br><span class="line">    LL s = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> mid = (t[x].l + t[x].r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (l &lt;= mid)   s += query(lson(x), l, r);</span><br><span class="line">    <span class="keyword">if</span> (r &gt; mid)    s += query(rson(x), l, r);</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    read(n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)    read(a[i]);</span><br><span class="line">    buildTree(<span class="number">1</span>, <span class="number">1</span>, n);</span><br><span class="line">    read(m);</span><br><span class="line">    <span class="keyword">while</span> (m--) &#123;</span><br><span class="line">        <span class="keyword">int</span> k, l, r;</span><br><span class="line">        read(k), read(l), read(r);</span><br><span class="line">        <span class="keyword">if</span> (l &gt; r)  <span class="built_in">std</span>::swap(l, r);</span><br><span class="line">        <span class="keyword">if</span> (!k) modify(<span class="number">1</span>, l, r);</span><br><span class="line">        <span class="keyword">else</span>    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, query(<span class="number">1</span>, l, r));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>注：此题是错题，没有靠谱的多项式复杂度的算法。</p>
+<blockquote>
+<p>没看到出处时以为是未卜先知，没想到是亡羊补牢。</p>
+</blockquote>
+<p>有一个很显然的贪心，每次只能切断当前这个周期其中的一个路径。</p>
+<p>考虑维护每一层的结点，每次选择一个子结点将它和它的子树打上标记，搜索的时候跳过它。</p>
+<p>这个过程可以用 <code>vector</code> 实现。</p>
+<p>然后就是搜搜搜。既然是错题也没什么深究的必要了。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> <span class="title">read</span>(<span class="title">T</span> &amp;<span class="title">x</span>) &#123;</span></span><br><span class="line">    x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch))    &#123; f |= ch == <span class="string">'-'</span>; ch = getchar(); &#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))     &#123; x = (x &lt;&lt; <span class="number">1</span>) + (x &lt;&lt; <span class="number">3</span>) + (ch ^ <span class="number">48</span>); ch = getchar(); &#125;</span><br><span class="line">    x = f ? -x : x;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; g[<span class="number">310</span>], node[<span class="number">310</span>];</span><br><span class="line"><span class="keyword">int</span> dep[<span class="number">310</span>], siz[<span class="number">310</span>], count[<span class="number">310</span>];</span><br><span class="line"><span class="keyword">int</span> n, p, maxDep, ans;</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">310</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pre</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> p)</span> </span>&#123;</span><br><span class="line">    siz[x] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> i : g[x]) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i != p) &#123;</span><br><span class="line">            dep[i] = dep[x] + <span class="number">1</span>;</span><br><span class="line">            maxDep = <span class="built_in">std</span>::max(maxDep, dep[i]);</span><br><span class="line">            pre(i, x);</span><br><span class="line">            siz[x] += siz[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mark</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    vis[x] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> i : g[x]) &#123;</span><br><span class="line">        <span class="keyword">if</span> (dep[i] &gt; dep[x]) &#123;</span><br><span class="line">            mark(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remark</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    vis[x] = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> i : g[x]) &#123;</span><br><span class="line">        <span class="keyword">if</span> (dep[i] &gt; dep[x]) &#123;</span><br><span class="line">            remark(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> now, <span class="keyword">int</span> s)</span> </span>&#123;</span><br><span class="line">    ans = <span class="built_in">std</span>::max(ans, s);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> i : node[now]) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> j : g[i]) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!vis[j] &amp;&amp; dep[j] &gt; dep[i]) &#123;</span><br><span class="line">                mark(j);</span><br><span class="line">                dfs(now + <span class="number">1</span>, s + siz[j]);</span><br><span class="line">                remark(j);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    read(n), read(p);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, u, v; i &lt;= p; ++i) &#123;</span><br><span class="line">        read(u), read(v);</span><br><span class="line">        g[u].push_back(v), g[v].push_back(u);</span><br><span class="line">    &#125;</span><br><span class="line">    dep[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    pre(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)    node[dep[i]].push_back(i);</span><br><span class="line">    dfs(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, n - ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -307,7 +308,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%B4%9B%E8%B0%B7/" rel="tag"># 洛谷</a>
+              <a href="/tags/NOIp/" rel="tag"># NOIp</a>
           </div>
 
         
@@ -316,13 +317,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/07/29/CSP2019-%E7%BD%91%E6%A0%BC%E5%9B%BE/" rel="prev" title="[CSP2019] 网格图">
-      <i class="fa fa-chevron-left"></i> [CSP2019] 网格图
+    <a href="/2020/08/17/NOI1999-%E7%94%9F%E6%97%A5%E8%9B%8B%E7%B3%95/" rel="prev" title="[NOI1999] 生日蛋糕">
+      <i class="fa fa-chevron-left"></i> [NOI1999] 生日蛋糕
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/07/30/%E4%B8%AD%E8%80%83%E5%AE%8C%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/" rel="next" title="中考完的一些想法">
-      中考完的一些想法 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
