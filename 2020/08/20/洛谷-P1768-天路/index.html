@@ -25,20 +25,20 @@
     var CONFIG = {"hostname":"crispycommand.moe","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="题目题目链接 题目大意：给出 $n$ 个物品，每个物品有一个价值 $v$ 和空间 $m$，有 $k$ 次机会可以将当前物品的价值翻一倍，每种物品只能进行一次这样的操作，物品最多选 $n - 1$ 个，求最大价值。$1 \le n \le 100, 0 \le m \le 1000$。">
+  <meta name="description" content="题目题目链接 题目大意：给出一个有向图 $G &#x3D; (V, E)$，每条边有两个值 $v_i, p_i$，求一个环，使得这条路上的 $\dfrac{\sum v_i}{\sum p_i}$ 最大。$1 \le |V| \le 7000, 1 \le |E| \le 20000, 1 \le v_i, p_i \le 1000$，保证答案在 $200$ 以内。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[EZEC - 1] 出题">
-<meta property="og:url" content="https://crispycommand.moe/2020/04/20/EZEC-1-%E5%87%BA%E9%A2%98/index.html">
+<meta property="og:title" content="[洛谷 P1768] 天路">
+<meta property="og:url" content="https://crispycommand.moe/2020/08/20/%E6%B4%9B%E8%B0%B7-P1768-%E5%A4%A9%E8%B7%AF/index.html">
 <meta property="og:site_name" content="CrispyCommand&#39;s Blog">
-<meta property="og:description" content="题目题目链接 题目大意：给出 $n$ 个物品，每个物品有一个价值 $v$ 和空间 $m$，有 $k$ 次机会可以将当前物品的价值翻一倍，每种物品只能进行一次这样的操作，物品最多选 $n - 1$ 个，求最大价值。$1 \le n \le 100, 0 \le m \le 1000$。">
+<meta property="og:description" content="题目题目链接 题目大意：给出一个有向图 $G &#x3D; (V, E)$，每条边有两个值 $v_i, p_i$，求一个环，使得这条路上的 $\dfrac{\sum v_i}{\sum p_i}$ 最大。$1 \le |V| \le 7000, 1 \le |E| \le 20000, 1 \le v_i, p_i \le 1000$，保证答案在 $200$ 以内。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-19T20:18:58.000Z">
-<meta property="article:modified_time" content="2020-07-22T15:36:38.713Z">
+<meta property="article:published_time" content="2020-08-20T14:12:44.000Z">
+<meta property="article:modified_time" content="2020-08-20T14:30:53.616Z">
 <meta property="article:author" content="CrispyCommand">
-<meta property="article:tag" content="EZEC">
+<meta property="article:tag" content="洛谷">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://crispycommand.moe/2020/04/20/EZEC-1-%E5%87%BA%E9%A2%98/">
+<link rel="canonical" href="https://crispycommand.moe/2020/08/20/%E6%B4%9B%E8%B0%B7-P1768-%E5%A4%A9%E8%B7%AF/">
 
 
 <script id="page-configurations">
@@ -51,7 +51,7 @@
   };
 </script>
 
-  <title>[EZEC - 1] 出题 | CrispyCommand's Blog</title>
+  <title>[洛谷 P1768] 天路 | CrispyCommand's Blog</title>
   
 
 
@@ -205,7 +205,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://crispycommand.moe/2020/04/20/EZEC-1-%E5%87%BA%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="https://crispycommand.moe/2020/08/20/%E6%B4%9B%E8%B0%B7-P1768-%E5%A4%A9%E8%B7%AF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/header.jpg">
@@ -218,7 +218,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [EZEC - 1] 出题
+          [洛谷 P1768] 天路
         </h1>
 
         <div class="post-meta">
@@ -228,7 +228,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-04-20 04:18:58" itemprop="dateCreated datePublished" datetime="2020-04-20T04:18:58+08:00">2020-04-20</time>
+              <time title="创建时间：2020-08-20 22:12:44" itemprop="dateCreated datePublished" datetime="2020-08-20T22:12:44+08:00">2020-08-20</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -240,11 +240,11 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/OI/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="url" rel="index"><span itemprop="name">动态规划</span></a>
+                  <a href="/categories/OI/%E6%9D%82%E9%A1%B9/" itemprop="url" rel="index"><span itemprop="name">杂项</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/OI/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%83%8C%E5%8C%85-DP/" itemprop="url" rel="index"><span itemprop="name">背包 DP</span></a>
+                  <a href="/categories/OI/%E6%9D%82%E9%A1%B9/%E5%88%86%E6%95%B0%E8%A7%84%E5%88%92/" itemprop="url" rel="index"><span itemprop="name">分数规划</span></a>
                 </span>
             </span>
 
@@ -257,8 +257,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/04/20/EZEC-1-%E5%87%BA%E9%A2%98/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/20/EZEC-1-%E5%87%BA%E9%A2%98/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/08/20/%E6%B4%9B%E8%B0%B7-P1768-%E5%A4%A9%E8%B7%AF/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/20/%E6%B4%9B%E8%B0%B7-P1768-%E5%A4%A9%E8%B7%AF/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -268,14 +268,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -287,16 +287,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><a href="https://www.luogu.com.cn/problem/P6433" target="_blank" rel="noopener">题目链接</a></p>
-<p>题目大意：给出 $n$ 个物品，每个物品有一个价值 $v$ 和空间 $m$，有 $k$ 次机会可以将当前物品的价值翻一倍，每种物品只能进行一次这样的操作，物品最多选 $n - 1$ 个，求最大价值。$1 \le n \le 100, 0 \le m \le 1000$。</p>
+        <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><a href="https://www.luogu.com.cn/problem/P1768" target="_blank" rel="noopener">题目链接</a></p>
+<p>题目大意：给出一个有向图 $G = (V, E)$，每条边有两个值 $v_i, p_i$，求一个环，使得这条路上的 $\dfrac{\sum v_i}{\sum p_i}$ 最大。$1 \le |V| \le 7000, 1 \le |E| \le 20000, 1 \le v_i, p_i \le 1000$，保证答案在 $200$ 以内。</p>
 <a id="more"></a>
 
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>其实不难发现，题目中的 “有一个物品不能取” 这句话其实是废话，因为一般来说背包问题不能全部取完，不取那个不在最终状态里的物品就行了。</p>
-<p>这道题无非就是又加了一维的情况。</p>
-<p>设 $f(i, j)$ 表示体积为 $i$，用了 $j$ 次翻倍时的最大收益。则状态转移方程为 $f(i, j) = \max(f(i - m_k, j) + v_k, f(i - m_k, j - 1) + 2v_k)$。</p>
-<p>注意到每个老师只能用一次，所以枚举 $j$ 时要注意一下范围。</p>
-<p>然后别忘了我们最开始说的那种情况，如果所有物品都能取，那就是一个简单的贪心，注意特判一下。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> <span class="title">read</span>(<span class="title">T</span> &amp;<span class="title">x</span>) &#123;</span></span><br><span class="line">    x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch))    &#123; f |= ch == <span class="string">'-'</span>; ch = getchar(); &#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))     &#123; x = (x &lt;&lt; <span class="number">1</span>) + (x &lt;&lt; <span class="number">3</span>) + (ch ^ <span class="number">48</span>); ch = getchar(); &#125;</span><br><span class="line">    x = f ? -x : x;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> f[<span class="number">1010</span>][<span class="number">1010</span>];</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1010</span>], x[<span class="number">1010</span>];</span><br><span class="line"><span class="keyword">int</span> n, m, ans, t, s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    read(n), read(m), read(t);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)    read(a[i]), read(x[i]), s += x[i];</span><br><span class="line">    <span class="keyword">if</span> (s &lt;= m) &#123;</span><br><span class="line">        <span class="built_in">std</span>::sort(a + <span class="number">1</span>, a + n + <span class="number">1</span>, [](<span class="keyword">int</span> a, <span class="keyword">int</span> b) &#123;</span><br><span class="line">            <span class="keyword">return</span> a &gt; b;</span><br><span class="line">        &#125; );</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= t; ++i)    ans += a[i] * <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = t + <span class="number">1</span>; i &lt; n; ++i) ans += a[i];</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = m; j &gt;= x[i]; --j) &#123;</span><br><span class="line">            f[j][<span class="number">0</span>] = <span class="built_in">std</span>::max(f[j][<span class="number">0</span>], f[j - x[i]][<span class="number">0</span>] + a[i]);</span><br><span class="line">            ans = <span class="built_in">std</span>::max(ans, f[j][<span class="number">0</span>]);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= <span class="built_in">std</span>::min(t, i); ++k) &#123;</span><br><span class="line">                f[j][k] = <span class="built_in">std</span>::max(f[j][k], <span class="built_in">std</span>::max(f[j - x[i]][k] + a[i], f[j - x[i]][k - <span class="number">1</span>] + a[i] * <span class="number">2</span>));</span><br><span class="line">                ans = <span class="built_in">std</span>::max(ans, f[j][k]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>写完这道题才知道这个东西叫分数规划…</p>
+<p>我们假设最后的答案为 $x$，则 $\dfrac{\sum v_i}{\sum p_i} \le x$。</p>
+<p>移项可得 $x \sum p_i - \sum v_i \ge 0$。</p>
+<p>显然这个 $x$ 是可以二分的，再加上题目中 $x$ 的范围十分小，我们要找的还是最小的 $x$，基本石锤了。</p>
+<p>考虑 $x$ 不够大时会发生什么，显然这个图里会产生负环，那么每次二分的时候判负环就行了。</p>
+<p>具体做法是将每条边的边权设为 $x’\dfrac{\sum v_i}{\sum p_i}$ 然后跑 SPFA。</p>
+<p>这道题的数据十分迷…据说 DFS 可以过 BFS 过不了，然而这数据又很水，判入队超过 20 次就能过。</p>
+<p>注意实数二分的数据类型。</p>
+<p>其实做完以后发现这个东西挺裸的，像个模板…</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> <span class="title">read</span>(<span class="title">T</span> &amp;<span class="title">x</span>) &#123;</span></span><br><span class="line">    x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch))    &#123; f |= ch == <span class="string">'-'</span>; ch = getchar(); &#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))     &#123; x = (x &lt;&lt; <span class="number">1</span>) + (x &lt;&lt; <span class="number">3</span>) + (ch ^ <span class="number">48</span>); ch = getchar(); &#125;</span><br><span class="line">    x = f ? -x : x;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-2</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> to, v, p;</span><br><span class="line">&#125; ;</span><br><span class="line"></span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;Edge&gt; g[<span class="number">7010</span>];</span><br><span class="line"><span class="keyword">double</span> dis[<span class="number">7010</span>];</span><br><span class="line"><span class="keyword">double</span> ans = <span class="number">-1</span>, l = <span class="number">0</span>, r = <span class="number">200</span>;</span><br><span class="line"><span class="keyword">int</span> times[<span class="number">7010</span>];</span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">7010</span>];</span><br><span class="line"><span class="keyword">bool</span> flag;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">spfa</span><span class="params">(<span class="keyword">double</span> mid)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(vis, <span class="literal">false</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">    <span class="built_in">memset</span>(dis, <span class="number">0x3f3f3f3f</span>, <span class="keyword">sizeof</span>(dis));</span><br><span class="line">    <span class="built_in">memset</span>(times, <span class="number">0</span>, <span class="keyword">sizeof</span>(times));</span><br><span class="line">    flag = <span class="literal">false</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">    q.push(<span class="number">0</span>);</span><br><span class="line">    vis[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">    dis[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> now = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        vis[now] = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> i : g[now])&#123;</span><br><span class="line">            <span class="keyword">double</span> w = mid * i.p - i.v;</span><br><span class="line">            <span class="keyword">if</span> (dis[i.to] &gt; dis[now] + w) &#123;</span><br><span class="line">                dis[i.to] = dis[now] + w;</span><br><span class="line">                <span class="keyword">if</span> (!vis[i.to]) &#123;</span><br><span class="line">                    vis[i.to] = <span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">if</span> (++times[i.to] &gt;= <span class="number">20</span>) &#123;</span><br><span class="line">                        flag = <span class="literal">true</span>;</span><br><span class="line">                        <span class="keyword">return</span> ;</span><br><span class="line">                    &#125;</span><br><span class="line">                    q.push(i.to);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    read(n), read(m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, a, b, v, p; i &lt;= m; ++i) &#123;</span><br><span class="line">        read(a), read(b), read(v), read(p);</span><br><span class="line">        g[a].push_back((Edge)&#123;b, v, p&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)    g[<span class="number">0</span>].push_back((Edge&#123;i, <span class="number">0</span>, <span class="number">0</span>&#125;));</span><br><span class="line">    <span class="keyword">while</span> (r - l &gt;= eps) &#123;</span><br><span class="line">        <span class="keyword">double</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        spfa(mid);</span><br><span class="line">        <span class="keyword">if</span> (flag)  l = mid, ans = mid;</span><br><span class="line">        <span class="keyword">else</span>    r = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (ans == <span class="number">-1</span>)  <span class="built_in">puts</span>(<span class="string">"-1"</span>);</span><br><span class="line">    <span class="keyword">else</span>    <span class="built_in">printf</span>(<span class="string">"%.1lf\n"</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -305,7 +309,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/EZEC/" rel="tag"># EZEC</a>
+              <a href="/tags/%E6%B4%9B%E8%B0%B7/" rel="tag"># 洛谷</a>
           </div>
 
         
@@ -314,13 +318,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/04/17/ABC162F-Select-Half/" rel="prev" title="[ABC162F] Select Half">
-      <i class="fa fa-chevron-left"></i> [ABC162F] Select Half
+    <a href="/2020/08/20/%E5%9B%BD%E5%AE%B6%E9%9B%86%E8%AE%AD%E9%98%9F-Tree-I/" rel="prev" title="[国家集训队] Tree I">
+      <i class="fa fa-chevron-left"></i> [国家集训队] Tree I
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/04/22/Learn-Git-Branching-%E8%AE%B0%E5%BD%95/" rel="next" title="Learn Git Branching 记录">
-      Learn Git Branching 记录 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
