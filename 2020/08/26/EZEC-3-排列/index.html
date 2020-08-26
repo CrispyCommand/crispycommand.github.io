@@ -25,20 +25,20 @@
     var CONFIG = {"hostname":"crispycommand.moe","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="题目题目链接 题目大意：给定一个 $n \times m$ 的网格图，点 $(i, j)$ 与 $(i, j + 1)$ 间有一条权值为 $a_i$ 的边，点 $(i, j)$ 与 $(i + 1, j)$ 间有一条权值为 $b_j$ 的边，求出这个网格图的最小生成树。$3 \le n, m \le 3 \times 10^5, 1 \le a_i, b_j \le 10^5$。">
+  <meta name="description" content="题目题目链接 题目大意：现有一堆数，从中选取若干个数排成一列，记为 $x_1, x_2, \cdots, x_p$ 且满足 $p \ge 2, y_i &#x3D; x_{i + 1} - x_i(y_p &#x3D; x_1 - x_p), y_i &#x3D; -y_{i + 1}, |y_i| &#x3D; k$。求 $\sum x_p$ 的最大值。无解输出 NO。$1 \le n \le 10^6, 0 \le k \le 10">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[CSP2019] 网格图">
-<meta property="og:url" content="https://crispycommand.moe/2020/07/29/CSP2019-%E7%BD%91%E6%A0%BC%E5%9B%BE/index.html">
+<meta property="og:title" content="[EZEC-3] 排列">
+<meta property="og:url" content="https://crispycommand.moe/2020/08/26/EZEC-3-%E6%8E%92%E5%88%97/index.html">
 <meta property="og:site_name" content="CrispyCommand&#39;s Blog">
-<meta property="og:description" content="题目题目链接 题目大意：给定一个 $n \times m$ 的网格图，点 $(i, j)$ 与 $(i, j + 1)$ 间有一条权值为 $a_i$ 的边，点 $(i, j)$ 与 $(i + 1, j)$ 间有一条权值为 $b_j$ 的边，求出这个网格图的最小生成树。$3 \le n, m \le 3 \times 10^5, 1 \le a_i, b_j \le 10^5$。">
+<meta property="og:description" content="题目题目链接 题目大意：现有一堆数，从中选取若干个数排成一列，记为 $x_1, x_2, \cdots, x_p$ 且满足 $p \ge 2, y_i &#x3D; x_{i + 1} - x_i(y_p &#x3D; x_1 - x_p), y_i &#x3D; -y_{i + 1}, |y_i| &#x3D; k$。求 $\sum x_p$ 的最大值。无解输出 NO。$1 \le n \le 10^6, 0 \le k \le 10">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-07-28T16:36:59.000Z">
-<meta property="article:modified_time" content="2020-07-28T16:56:57.198Z">
+<meta property="article:published_time" content="2020-08-26T15:43:10.000Z">
+<meta property="article:modified_time" content="2020-08-26T15:53:08.355Z">
 <meta property="article:author" content="CrispyCommand">
-<meta property="article:tag" content="CSP">
+<meta property="article:tag" content="EZEC">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://crispycommand.moe/2020/07/29/CSP2019-%E7%BD%91%E6%A0%BC%E5%9B%BE/">
+<link rel="canonical" href="https://crispycommand.moe/2020/08/26/EZEC-3-%E6%8E%92%E5%88%97/">
 
 
 <script id="page-configurations">
@@ -51,7 +51,7 @@
   };
 </script>
 
-  <title>[CSP2019] 网格图 | CrispyCommand's Blog</title>
+  <title>[EZEC-3] 排列 | CrispyCommand's Blog</title>
   
 
 
@@ -205,7 +205,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://crispycommand.moe/2020/07/29/CSP2019-%E7%BD%91%E6%A0%BC%E5%9B%BE/">
+    <link itemprop="mainEntityOfPage" href="https://crispycommand.moe/2020/08/26/EZEC-3-%E6%8E%92%E5%88%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/header.jpg">
@@ -218,7 +218,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [CSP2019] 网格图
+          [EZEC-3] 排列
         </h1>
 
         <div class="post-meta">
@@ -228,7 +228,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-07-29 00:36:59" itemprop="dateCreated datePublished" datetime="2020-07-29T00:36:59+08:00">2020-07-29</time>
+              <time title="创建时间：2020-08-26 23:43:10" itemprop="dateCreated datePublished" datetime="2020-08-26T23:43:10+08:00">2020-08-26</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -240,11 +240,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/OI/%E5%9B%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">图论</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/OI/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" itemprop="url" rel="index"><span itemprop="name">最小生成树</span></a>
+                  <a href="/categories/OI/%E6%A8%A1%E6%8B%9F/" itemprop="url" rel="index"><span itemprop="name">模拟</span></a>
                 </span>
             </span>
 
@@ -257,8 +253,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/07/29/CSP2019-%E7%BD%91%E6%A0%BC%E5%9B%BE/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/29/CSP2019-%E7%BD%91%E6%A0%BC%E5%9B%BE/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/08/26/EZEC-3-%E6%8E%92%E5%88%97/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/26/EZEC-3-%E6%8E%92%E5%88%97/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -287,19 +283,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><a href="https://www.luogu.com.cn/problem/P5687" target="_blank" rel="noopener">题目链接</a></p>
-<p>题目大意：给定一个 $n \times m$ 的网格图，点 $(i, j)$ 与 $(i, j + 1)$ 间有一条权值为 $a_i$ 的边，点 $(i, j)$ 与 $(i + 1, j)$ 间有一条权值为 $b_j$ 的边，求出这个网格图的最小生成树。$3 \le n, m \le 3 \times 10^5, 1 \le a_i, b_j \le 10^5$。</p>
+        <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><a href="https://www.luogu.com.cn/problem/P6785" target="_blank" rel="noopener">题目链接</a></p>
+<p>题目大意：现有一堆数，从中选取若干个数排成一列，记为 $x_1, x_2, \cdots, x_p$ 且满足 $p \ge 2, y_i = x_{i + 1} - x_i(y_p = x_1 - x_p), y_i = -y_{i + 1}, |y_i| = k$。求 $\sum x_p$ 的最大值。无解输出 <code>NO</code>。$1 \le n \le 10^6, 0 \le k \le 10^6$。</p>
 <a id="more"></a>
 
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>暴力做法直接 Kruskal 即可。</p>
-<p>考虑 Kruskal 的过程：找出没被取过的最小的边加入，并且加入后不成环。</p>
-<p>这道题目每一行和每一列的值是相同的，所以可以一行或者一列的来讨论。显然边在一整行一整列的加入时是最优的。</p>
-<p>接下来考虑怎么才能不形成环。</p>
-<p>最小的行和最小的列显然不形成环，所以全部加上。</p>
-<p>设现在已经取了 $r$ 行 $c$ 列。</p>
-<p>对于一条将要被加入的行，已经有 $c$ 个点在生成树中，要连的边的总数即为 $m - c$，否则就会与已经连的边形成环。</p>
-<p>注意开 <code>long long</code>。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> <span class="title">read</span>(<span class="title">T</span> &amp;<span class="title">x</span>) &#123;</span></span><br><span class="line">    x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch))    &#123; f |= ch == <span class="string">'-'</span>; ch = getchar(); &#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))     &#123; x = (x &lt;&lt; <span class="number">1</span>) + (x &lt;&lt; <span class="number">3</span>) + (ch ^ <span class="number">48</span>); ch = getchar(); &#125;</span><br><span class="line">    x = f ? -x : x;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"></span><br><span class="line">LL ans;</span><br><span class="line">LL a[<span class="number">300010</span>], b[<span class="number">300010</span>];</span><br><span class="line"><span class="keyword">int</span> n, m, r, c, x, y;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    read(n), read(m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)    read(a[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i)    read(b[i]);</span><br><span class="line">    <span class="built_in">std</span>::sort(a + <span class="number">1</span>, a + n + <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">std</span>::sort(b + <span class="number">1</span>, b + m + <span class="number">1</span>);</span><br><span class="line">    ans = a[<span class="number">1</span>] * (m - <span class="number">1</span>) + b[<span class="number">1</span>] * (n - <span class="number">1</span>);</span><br><span class="line">    r = <span class="number">1</span>, c = <span class="number">1</span>, x = <span class="number">2</span>, y = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span> (x &lt;= n &amp;&amp; y &lt;= m) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a[x] &lt;= b[y])   ans += a[x++] * (m - c), ++r;</span><br><span class="line">        <span class="keyword">else</span>    ans += b[y++] * (n - r), ++c;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>颓废了好几天没写题……<del>于是写了道水题</del>。</p>
+<p>题目看着花里胡哨的，但其实就是让满足最后的序列为 $a, b, a, b, a, b$ 这个样子。</p>
+<p>把每个数存到桶里，枚举一遍，就做完了。</p>
+<p>看到有人说细节很多，感觉也不算多吧……</p>
+<p>$k = 0$ 的时候需要全部数一样，特判一下，枚举的时候判断一下 $i$ 和 $i + k$ 都有就行了。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> <span class="title">read</span>(<span class="title">T</span> &amp;<span class="title">x</span>) &#123;</span></span><br><span class="line">    x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch))    &#123; f |= ch == <span class="string">'-'</span>; ch = getchar(); &#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))     &#123; x = (x &lt;&lt; <span class="number">1</span>) + (x &lt;&lt; <span class="number">3</span>) + (ch ^ <span class="number">48</span>); ch = getchar(); &#125;</span><br><span class="line">    x = f ? -x : x;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"></span><br><span class="line">LL t[<span class="number">1000010</span>];</span><br><span class="line">LL n, k, a, b, ans = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    read(n), read(k);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)    read(a), read(b), t[a] += b;</span><br><span class="line">    <span class="keyword">if</span> (!k) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">1000000</span>; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (t[i] &gt;= <span class="number">2</span>) &#123;</span><br><span class="line">                ans = <span class="built_in">std</span>::max(ans, t[i] * i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (ans == <span class="number">-1</span>)  <span class="built_in">puts</span>(<span class="string">"NO"</span>);</span><br><span class="line">        <span class="keyword">else</span>    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">1000000</span>; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i + k &lt;= <span class="number">1000000</span> &amp;&amp; t[i] &amp;&amp; t[i + k]) &#123;</span><br><span class="line">            ans = <span class="built_in">std</span>::max(ans, <span class="built_in">std</span>::min(t[i + k], t[i]) * (i + i + k));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (ans == <span class="number">-1</span>)  <span class="built_in">puts</span>(<span class="string">"NO"</span>);</span><br><span class="line">    <span class="keyword">else</span>    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -308,7 +302,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/CSP/" rel="tag"># CSP</a>
+              <a href="/tags/EZEC/" rel="tag"># EZEC</a>
           </div>
 
         
@@ -317,13 +311,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/07/25/NOIp2006-%E8%83%BD%E9%87%8F%E9%A1%B9%E9%93%BE/" rel="prev" title="[NOIp2006] 能量项链">
-      <i class="fa fa-chevron-left"></i> [NOIp2006] 能量项链
+    <a href="/2020/08/20/%E6%B4%9B%E8%B0%B7-P1768-%E5%A4%A9%E8%B7%AF/" rel="prev" title="[洛谷 P1768] 天路">
+      <i class="fa fa-chevron-left"></i> [洛谷 P1768] 天路
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/07/30/%E6%B4%9B%E8%B0%B7-P4145-%E4%B8%8A%E5%B8%9D%E9%80%A0%E9%A2%98%E7%9A%84%E4%B8%83%E5%88%86%E9%92%9F2-%E8%8A%B1%E7%A5%9E%E6%B8%B8%E5%8E%86%E5%90%84%E5%9B%BD/" rel="next" title="[洛谷 P4145] 上帝造题的七分钟2 / 花神游历各国">
-      [洛谷 P4145] 上帝造题的七分钟2 / 花神游历各国 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
