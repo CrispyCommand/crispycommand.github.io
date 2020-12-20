@@ -4,6 +4,62 @@
   
     
     <entry>
+      <title>[NOIp2011] 选择客栈</title>
+      <link href="/2020/12/20/NOIp2011-%E9%80%89%E6%8B%A9%E5%AE%A2%E6%A0%88/"/>
+      <url>/2020/12/20/NOIp2011-%E9%80%89%E6%8B%A9%E5%AE%A2%E6%A0%88/</url>
+      
+        <content type="html"><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><a href="https://loj.ac/p/2597" target="_blank" rel="noopener">题目链接</a></p><p>题目大意：给出长度为 $n$ 的序列 $\\{a_n\\}, \\{b_n\\}$，找出有多少对 $(i, j)$ 满足 $a_i = a_j, \exists k \in [i, j] \text{ st. } b_k \le p, i \ne j$。$1 \le n \le 2 \times 10^6, 1 \le p \le 100$。</p><a id="more"></a><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h4 id="算法一"><a href="#算法一" class="headerlink" title="算法一"></a>算法一</h4><p>每次枚举 $i, j, k$ 并判断，时间复杂度 $O(n ^ 3)$。</p><h4 id="算法二"><a href="#算法二" class="headerlink" title="算法二"></a>算法二</h4><p>预处理 $f_i = f_{i - 1} + [b_i \le p]$，每次枚举 $(i, j)$ 并判断。</p><p>时间复杂度 $O(n ^ 2)$。</p><h4 id="算法三"><a href="#算法三" class="headerlink" title="算法三"></a>算法三</h4><p>考虑枚举 $j$，用类似 <code>vector</code> 的东西存下相同的 $a_i$ 的 $i$，二分找出最大的 $i$ 满足 $f_j - f_{i - 1} &gt; 0$。</p><p>时间复杂度 $O(n \log n)$。</p><h4 id="算法四"><a href="#算法四" class="headerlink" title="算法四"></a>算法四</h4><p>考虑枚举 $j$，维护 $cnt_i$ 表示 $i$ 之前有多少个 $k$ 满足 $a_i = a_k$，$lst_i$ 表示 $a_i$ 上次出现的位置，用 $pos$ 表示离 $j$ 最近的满足 $b_i \le p$ 的点，$s_i$ 表示 $a_i$ 当前的方案数。</p><p>每次遇到一个点时先判断是否满足 $b_i \le p$，然后判断当前的 $pos$ 是否大于等于 $lst_{a_{i}}$，然后更新答案。</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> <span class="title">read</span>(<span class="title">T</span> &amp;<span class="title">x</span>) &#123;</span></span><br><span class="line">    x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> f = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch))    &#123; f |= ch == <span class="string">'-'</span>; ch = getchar(); &#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch))     &#123; x = (x &lt;&lt; <span class="number">1</span>) + (x &lt;&lt; <span class="number">3</span>) + (ch ^ <span class="number">48</span>); ch = getchar(); &#125;</span><br><span class="line">    x = f ? -x : x;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> uLL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"></span><br><span class="line">LL s[<span class="number">10010</span>], cnt[<span class="number">10010</span>], lst[<span class="number">10010</span>];</span><br><span class="line">LL ans;</span><br><span class="line"><span class="keyword">int</span> n, k, p, a, b, pos;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    read(n), read(k), read(p);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        read(a), read(b);</span><br><span class="line">        <span class="keyword">if</span> (b &lt;= p)    pos = i;</span><br><span class="line">        <span class="keyword">if</span> (pos &gt;= lst[a])    s[a] = cnt[a];</span><br><span class="line">        lst[a] = i;</span><br><span class="line">        ans += s[a];</span><br><span class="line">        ++cnt[a];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>以后就把 OI 当爱好了 ^^。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> OI </category>
+          
+          <category> 算法基础 </category>
+          
+          <category> 模拟 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> NOIp </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>集合作业</title>
+      <link href="/2020/12/13/%E9%9B%86%E5%90%88%E4%BD%9C%E4%B8%9A/"/>
+      <url>/2020/12/13/%E9%9B%86%E5%90%88%E4%BD%9C%E4%B8%9A/</url>
+      
+        <content type="html"><![CDATA[<p>集合作业。</p><a id="more"></a><h3 id="题-1"><a href="#题-1" class="headerlink" title="题 1"></a>题 1</h3><h4 id="1"><a href="#1" class="headerlink" title="(1)"></a>(1)</h4><p>已知非空数集 $M \subseteq \{1, 2, 3, 4, 5\}$，则满足条件“若 $x \in M$，则 $6 - x \in M$” 的集合 $M$ 的个数是？</p><p>解：注意到所有组合为 $(1, 5), (2, 4), (3)$，可知答案为 $2 ^ 3 - 1 = 7$。</p><h4 id="2"><a href="#2" class="headerlink" title="(2)"></a>(2)</h4><p>集合 $A = \{x_1, x_2, x_3, x_4, x_5\}$，计算 $A$ 中的二元子集的两元素之和组成集合 $B = \{3, 4, 5, 6, 7, 8, 9, 10, 11, 13\}$，求 $A$。</p><p>解：设 $x_1 &lt; x_2 &lt; x_3 &lt; x_4 &lt; x_5$。</p><p>显然  $\begin{cases}x_1 + x_2 = 3\\x_4 + x_5 = 13\\x_1 + x_2 + x_3 + x_4 + x_5 = \dfrac{3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 13}{4}\\x_3 + x_5 = 11\\x_1 + x_3 = 4\end{cases}$</p><p>解得 $A = \{1, 2, 3, 5, 8\}$。</p><h3 id="题-2"><a href="#题-2" class="headerlink" title="题 2"></a>题 2</h3><p>非空集合 $S$ 满足：</p><ul><li>$S \subseteq \{1, 2, \cdots, 2n + 1\}, n \in \mathbb{N} ^ *$;</li><li>若 $a \in S$，则有 $2n + 2 - a \in S$.</li></ul><p>那么，同时满足条件的非空集合 $S$ 的个数是？</p><p>解：集合 $S \subseteq \{1, 2, 3, 5, 7, \cdots \}$。</p><p>注意到 $2 \notin S$。</p><p>则所有组合为 $(1, 2n + 1), (3, 2(n - 1) + 1), (5, 2(n - 2) + 1), \cdots$，共有 $n + 1$ 组。</p><p>答案为 $2 ^ {n + 1} - 1$。</p><h3 id="题-3"><a href="#题-3" class="headerlink" title="题 3"></a>题 3</h3><p>考虑实数 $x$ 在三进制中的表达式。$K$ 是区间 $[0, 1]$ 内所有这样的数 $x$ 的集合，并且 $x$ 的每位数字是 $0$ 或 $2$。如果 $S = \{x + y \ | \ x, y \in K\}$，求证：$S = \{z \ | \ 0 \le z \le 2\} = [0, 2]$。</p><p>证明：考虑 $\dfrac{x}{2}, \dfrac{y}{2}$，显然 $\dfrac{x}{2}, \dfrac{y}{2}$ 的每一位为 $0$ 或 $1$。</p><p>则 $\dfrac{x}{2}, \dfrac{y}{2}$ 可以取遍 $[0, 1]$ 中所有实数。</p><p>则 $x + y$ 可以取遍 $[0, 2]$ 中所有实数。</p><h3 id="题-4"><a href="#题-4" class="headerlink" title="题 4"></a>题 4</h3><h4 id="1-1"><a href="#1-1" class="headerlink" title="(1)"></a>(1)</h4><p>已知集合 $M = \{2, |a|\}$ 是全集 $U = \{2, 3, a^2 + 2a + 2\}$ 的一个子集，且 $\complement_U M = \{5\}$，则实数 $a$ 的值等于？</p><ul><li>比高考题还简单。</li></ul><p>解：$-3$。</p><h4 id="2-1"><a href="#2-1" class="headerlink" title="(2)"></a>(2)</h4><p>已知全集 $I = \mathbb{Z}, M = \{x \ | \ x = 2n, n \in \mathbb{Z}\}, S = \{x \ | \ x = 3n, n \in \mathbb{Z}\}$，则 $M \cap \complement_{\mathbb{Z}} S$ 为？</p><ul><li>比高考题还简单。</li></ul><p>解：为 $\{x \ | \ x = 6n \pm 2, n \in \mathbb{Z} \}$。</p><h4 id="3"><a href="#3" class="headerlink" title="(3)"></a>(3)</h4><p>设全集 $U = \{x \ | \ x = 2n - 1, n \in \mathbb{Z}, n \le 7\},$ $A \cap (\complement_U B) = \{3, 7\}, (\complement_U A) \cap B = \{9, 13\},$ $(\complement_U A) \cap (\complement_U B) = \{1, 11\}$，求 $A, B$。</p><ul><li>比高考题还简单</li></ul><p>解：$A = \{3, 5, 7\}, B = \{5, 9, 13\}$。</p><h3 id="题-5"><a href="#题-5" class="headerlink" title="题 5"></a>题 5</h3><p>设集合 $S_n = \{1, 2, \cdots, n\}$，若 $Z$ 是 $S_n$ 的子集，把 $Z$ 中所有数的和称为 $Z$ 的“容量”（规定空集的容量为 $0$）。若 $Z$ 的容量为奇（偶）数，则称 $Z$ 为 $S_n$ 的奇（偶）子集。</p><ul><li>感觉是唯一有难度的题</li><li>可以使用归纳法来不讲武德型证明</li></ul><h4 id="1-2"><a href="#1-2" class="headerlink" title="(1)"></a>(1)</h4><p>求证：$S_n$ 的奇子集与偶子集个数相等；</p><p>证明：设 $A = S \setminus \{1\}$，则 $A$ 中的偶子集并上 $\{1\}$ 以后为奇子集，奇子集并上 $\{1\}$ 为偶子集。</p><p>所以 $S_n$ 的奇子集和偶子集一一对应，个数相等。</p><h4 id="2-2"><a href="#2-2" class="headerlink" title="(2)"></a>(2)</h4><p>求证：当 $n \ge 3$ 时，$S_n$ 的所有奇子集的容量之和与所有偶子集的容量之和相等。</p><p>证明与 (1) 类似，只需要对 $\{3\}$ 再讨论一下即可。</p><h4 id="3-1"><a href="#3-1" class="headerlink" title="(3)"></a>(3)</h4><p>当 $n \ge 3$ 时，求 $S_n$ 的所有奇子集的容量之和。</p><p>解：由 (2) 的结论可知为 $\dfrac{\sum \limits_{i = 1} ^ n i \cdot 2 ^ {n - 1}}{2} = n(n + 1) \cdot 2 ^ {n - 3}$。</p><h3 id="题-6"><a href="#题-6" class="headerlink" title="题 6"></a>题 6</h3><p>设 $M = \{1, 2, \cdots, 2019\}$，$A$ 是 $M$ 的子集，且满足条件：当 $x \in A$ 时，$10x \notin A$。则 $A$ 中元素个数最多是？</p><ul><li><a href="https://www.luogu.com.cn/problem/P1978" target="_blank" rel="noopener">洛谷 P1978 集合</a></li></ul><p>解：若 $x \in A$，则 $10x \notin A, 100x \in A, 1000x \notin A$。</p><p>则答案为 $2019 - 201 + 20 - 2 = 1836$。</p><h3 id="题-7"><a href="#题-7" class="headerlink" title="题 7"></a>题 7</h3><p>把集合 $\{1, 2, \cdots, 10^6\}$ 划分成两个不相交的子集，一个是所有可以表示为一个完全平方数与一个完全立方数之和的数所成的子集，另一个是集合中所有其余的数所成的子集。问哪一个子集元素较多？说明理由。</p><p>解：设 $A = \{x \ | \ x = a^2, x \le 10^6\}, B = \{x \ | \ x = a^3, x \le 10^6\}, S = \{x \ | \ x = a + b, a \in A, b \in B\}$。</p><p>则 $|A| = 1000, |B| = 100$。</p><p>则 $|S| \le 1000 \times 100 = 10^5, |\{1, 2, \cdots, 10^6\} \setminus S \ | \ge 10^5$。</p><h3 id="题-8"><a href="#题-8" class="headerlink" title="题 8"></a>题 8</h3><p>证明以下集合的元素个数相等：</p><h4 id="1-3"><a href="#1-3" class="headerlink" title="(1)"></a>(1)</h4><p>$(0, 1)$ 和 $\mathbb{R} ^ +$。 </p><p>证明：$\forall x \in (0, 1), \dfrac{x}{1 - x} \in \mathbb{R} ^ +$。$\forall x \in \mathbb{R} ^ +, \dfrac{x}{x + 1} \in (0, 1)$。</p><h4 id="2-3"><a href="#2-3" class="headerlink" title="(2)"></a>(2)</h4><p>$[0, 1]$ 和 $(0, 1)$。</p><p>证明：$f(x) : [0, 1] \to (0, 1) = \begin{cases}x, x \ne \dfrac{1}{2^k}\\\dfrac{1}{2}, x = 1\\0, x = 0, \\\dfrac{1}{4}x, x = \dfrac{1}{2^k}\end{cases}, k \in \mathbb{N} ^ *$。</p><h4 id="3-2"><a href="#3-2" class="headerlink" title="(3)"></a>(3)</h4><p>$\{(x, y) \ | \ x ^ 2 + y ^ 2 = 1\}$ 和 $\mathbb{R}$。</p><p>证明：原集合可写为 $\{(\cos \theta, \sin \theta) \ | \ \theta \in (0, 2\pi]\}$。</p><p>之后的证明同 (1)。</p><p>或者由 $\tan \theta = \dfrac{y}{x}$，且 $\tan \theta$ 值域为 $\mathbb{R}$。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MO </category>
+          
+          <category> 集合 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 集合 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>[NOI2011] 道路修建</title>
       <link href="/2020/12/09/NOI2011-%E9%81%93%E8%B7%AF%E4%BF%AE%E5%BB%BA/"/>
       <url>/2020/12/09/NOI2011-%E9%81%93%E8%B7%AF%E4%BF%AE%E5%BB%BA/</url>
@@ -25,33 +81,6 @@
         <tags>
             
             <tag> NOI </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>一些极限习题</title>
-      <link href="/2020/12/06/%E4%B8%80%E4%BA%9B%E6%9E%81%E9%99%90%E4%B9%A0%E9%A2%98/"/>
-      <url>/2020/12/06/%E4%B8%80%E4%BA%9B%E6%9E%81%E9%99%90%E4%B9%A0%E9%A2%98/</url>
-      
-        <content type="html"><![CDATA[<p>由于 NOIp2020 挂惨了所以来 MO 了。</p><p>简单记一下。</p><a id="more"></a><p>基本结论：$\lim \limits_{x \to 0} \dfrac{\sin x}{x} = 1, \lim \limits_{x \to \infty}(1 + \dfrac{1}{x})^x = \mathrm{e}$。</p><h3 id="题-1"><a href="#题-1" class="headerlink" title="题 1"></a>题 1</h3><p>求 $\lim \limits_{x \to 0} \dfrac{\sin mx}{\sin nx}(n \neq 0, x \neq 0)$。</p><p>解：原式 $= \lim \limits_{x \to 0}(\dfrac{\sin mx}{mx} \cdot \dfrac{nx}{\sin nx} \cdot \dfrac{m}{n})$</p><p>由 $\lim \limits_{x \to 0} \dfrac{\sin x}{x} = 1$，易得原式结果为 $\dfrac{m}{n}$。</p><p>什么？你问我为什么 $\lim \limits_{x \to 0} \dfrac{x}{\sin x} = 1$？</p><h3 id="题-2"><a href="#题-2" class="headerlink" title="题 2"></a>题 2</h3><p>求 $\lim \limits_{x \to 1} \dfrac{\ln x}{x - 1}$。</p><p>解：设 $t = x - 1$，则原式化为 $\lim \limits_{t \to 0} \dfrac{\ln (t + 1)}{t} = \lim \limits_{t \to 0} (\ln (t + 1) ^ {\frac{1}{t}})$。</p><p>取 $t = \dfrac{1}{t}$，原式化为 $\ln (\lim \limits_{t \to 0}(1 + \dfrac{1}{t}) ^ t) = \ln \mathrm{e} = 1$。</p><h3 id="题-3"><a href="#题-3" class="headerlink" title="题 3"></a>题 3</h3><p>求 $\lim \limits_{n \to \infty}(\sqrt{n + \sqrt{n + \sqrt{n}}} - \sqrt{n})$。</p><p>解：原式 $= \lim \limits_{n \to \infty}\dfrac{\sqrt{n + \sqrt{n}}}{\sqrt{n + \sqrt{n + \sqrt{n}} } + \sqrt{n}}$</p><p>上下同除以 $\sqrt n$，得到 $\lim \limits_{n \to \infty}\dfrac{\sqrt{1 + \sqrt{\dfrac{1}{n}}}}{\sqrt{1 + \sqrt{\dfrac{1}{n} + \sqrt{\dfrac{1}{n ^ 2}}} } + 1} = \dfrac{1}{2}$</p><h3 id="题-4"><a href="#题-4" class="headerlink" title="题 4"></a>题 4</h3><p>求 $\lim \limits_{n \to \infty}(\sum \limits_{i = 1}^n \dfrac{1}{\sqrt{n ^ 2 + i}})$。</p><p>解：显然 $\dfrac{n}{\sqrt{n ^ 2 + n}} &lt; \sum \limits_{i = 1}^n \dfrac{1}{\sqrt{n ^ 2 + i}} &lt; \dfrac{n}{\sqrt{n ^ 2}} = 1$。</p><p>又 $\lim \limits_{n \to \infty} (\dfrac{n}{\sqrt{n ^ 2 + n}}) = \lim \limits_{n \to \infty} (\dfrac{1}{\sqrt{1 + \frac{1}{n}}}) = 1$。</p><p>由夹逼法则得原式结果为 $1$。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> MO </category>
-          
-          <category> 代数 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 极限 </tag>
             
         </tags>
       
