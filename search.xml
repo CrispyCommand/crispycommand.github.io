@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>一道解方程</title>
+      <link href="/2021/01/09/%E4%B8%80%E9%81%93%E8%A7%A3%E6%96%B9%E7%A8%8B/"/>
+      <url>/2021/01/09/%E4%B8%80%E9%81%93%E8%A7%A3%E6%96%B9%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>解方程组 $\begin{cases}\sqrt{x(1 - y)} + \sqrt{y(1 - x)} = \dfrac{1}{2}\\\sqrt{xy} + \sqrt{(1 - x)(1 - y)} = \dfrac{\sqrt{3}}{2}\end{cases}$.</p><a id="more"></a><h3 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h3><h4 id="法一"><a href="#法一" class="headerlink" title="法一"></a>法一</h4><p>对上式分别平方, 得到 $\begin{cases}x(1 - y) + y(1 - x) + 2\sqrt{xy(1 - x)(1 - y)} = \dfrac{1}{4}\\xy + (1 - x)(1 - y) + 2\sqrt{xy(1 - x)(1 - y)} = \dfrac{3}{4}\end{cases}$.</p><p>化简后得到 $xy(1 - x)(1 - y) = 0$.</p><p>解得方程的解为 $\begin{cases}x = 0\\y = \dfrac{1}{4}\end{cases}$ 或 $\begin{cases}x = 1\\y = \dfrac{3}{4}\end{cases}$ 或 $\begin{cases}x = \dfrac{1}{4}\\y = 0\end{cases}$ 或 $\begin{cases}x = \dfrac{3}{4}\\y = 1\end{cases}$.</p><h4 id="法二"><a href="#法二" class="headerlink" title="法二"></a>法二</h4><p>由 $xy \ge 0$ 得 $x, y$ 同号. </p><p>若 $x, y &lt; 0$, 则 $x(1 - y) &lt; 0$.</p><p>所以 $x, y \ge 0$ 且 $x, y \le 1$.</p><p>设 $x = \sin ^ 2 \theta, \theta \in [0, \dfrac{\pi}{2}], y = \sin ^ 2 \varphi, \varphi \in [0, \dfrac{\pi}{2}]$.</p><p>原方程组化为 $\begin{cases}\sin \theta \cos \varphi + \sin \varphi \cos \theta = \dfrac{1}{2}\\\sin \theta \sin \varphi + \cos \theta \cos \varphi = \dfrac{\sqrt{3}}{2}\end{cases}$.</p><p>即 $\begin{cases}\sin(\theta + \varphi) = \dfrac{1}{2}\\\cos(\theta - \varphi) = \dfrac{\sqrt{3}}{2}\end{cases}$.</p><p>然后应该学过必修四就会了。</p><h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>感觉自己好久没有写这种东西了，所以水一篇（</p><p>不知不觉又一年过去了，去年这个时候说要进省队，结果没进，连一等都没拿上。</p><p>倒是 fgo 忙里偷闲地把 1.5 要打完了，音游打的也不算特别差。</p><p>文化课比初中那会排名高了许多，非常吓人。</p><p>感觉课内并没有什么思维上很难的东西（除了政治历史）。不过我现在有借口掩饰中考没考好了：初中没有认真学习。</p><p>前几天打了场 div 3，结果被自己的英语阅读水平坑了。</p><p>在现在的班里面成为了那种自己感觉很沉默的人，倒也不是什么坏事。</p><p>认识了年级里十分厉害的人，一番询问后发现他中考语文比我高了二三十分，tql。</p><p>现在随身带着小刀，大不了就是进去几年（危险发言）。</p><p>今年 XJ 也有省选了，好事情，政策上是 A + C，这样换算一下我的省选分数至少要比当前最后一名高 44 分，我感觉按照省选的难度来说是没辙了。</p><p>WC 因为傻逼原因没能去。</p><p>感觉新的一年里要努力呢 ^^ 。</p><p>话说现在又到了冬天了，放这首歌没问题吧？</p><p><meting-js    id="32303030"    server="netease"    type="song"><br></meting-js></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MO </category>
+          
+          <category> 代数 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 代数 </tag>
+            
+            <tag> 三角函数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>[NOIp2011] 选择客栈</title>
       <link href="/2020/12/20/NOIp2011-%E9%80%89%E6%8B%A9%E5%AE%A2%E6%A0%88/"/>
       <url>/2020/12/20/NOIp2011-%E9%80%89%E6%8B%A9%E5%AE%A2%E6%A0%88/</url>
@@ -25,33 +54,6 @@
         <tags>
             
             <tag> NOIp </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>集合作业</title>
-      <link href="/2020/12/13/%E9%9B%86%E5%90%88%E4%BD%9C%E4%B8%9A/"/>
-      <url>/2020/12/13/%E9%9B%86%E5%90%88%E4%BD%9C%E4%B8%9A/</url>
-      
-        <content type="html"><![CDATA[<p>集合作业。</p><a id="more"></a><h3 id="题-1"><a href="#题-1" class="headerlink" title="题 1"></a>题 1</h3><h4 id="1"><a href="#1" class="headerlink" title="(1)"></a>(1)</h4><p>已知非空数集 $M \subseteq \{1, 2, 3, 4, 5\}$，则满足条件“若 $x \in M$，则 $6 - x \in M$” 的集合 $M$ 的个数是？</p><p>解：注意到所有组合为 $(1, 5), (2, 4), (3)$，可知答案为 $2 ^ 3 - 1 = 7$。</p><h4 id="2"><a href="#2" class="headerlink" title="(2)"></a>(2)</h4><p>集合 $A = \{x_1, x_2, x_3, x_4, x_5\}$，计算 $A$ 中的二元子集的两元素之和组成集合 $B = \{3, 4, 5, 6, 7, 8, 9, 10, 11, 13\}$，求 $A$。</p><p>解：设 $x_1 &lt; x_2 &lt; x_3 &lt; x_4 &lt; x_5$。</p><p>显然  $\begin{cases}x_1 + x_2 = 3\\x_4 + x_5 = 13\\x_1 + x_2 + x_3 + x_4 + x_5 = \dfrac{3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 13}{4}\\x_3 + x_5 = 11\\x_1 + x_3 = 4\end{cases}$</p><p>解得 $A = \{1, 2, 3, 5, 8\}$。</p><h3 id="题-2"><a href="#题-2" class="headerlink" title="题 2"></a>题 2</h3><p>非空集合 $S$ 满足：</p><ul><li>$S \subseteq \{1, 2, \cdots, 2n + 1\}, n \in \mathbb{N} ^ *$;</li><li>若 $a \in S$，则有 $2n + 2 - a \in S$.</li></ul><p>那么，同时满足条件的非空集合 $S$ 的个数是？</p><p>解：集合 $S \subseteq \{1, 2, 3, 5, 7, \cdots \}$。</p><p>注意到 $2 \notin S$。</p><p>则所有组合为 $(1, 2n + 1), (3, 2(n - 1) + 1), (5, 2(n - 2) + 1), \cdots$，共有 $n + 1$ 组。</p><p>答案为 $2 ^ {n + 1} - 1$。</p><h3 id="题-3"><a href="#题-3" class="headerlink" title="题 3"></a>题 3</h3><p>考虑实数 $x$ 在三进制中的表达式。$K$ 是区间 $[0, 1]$ 内所有这样的数 $x$ 的集合，并且 $x$ 的每位数字是 $0$ 或 $2$。如果 $S = \{x + y \ | \ x, y \in K\}$，求证：$S = \{z \ | \ 0 \le z \le 2\} = [0, 2]$。</p><p>证明：考虑 $\dfrac{x}{2}, \dfrac{y}{2}$，显然 $\dfrac{x}{2}, \dfrac{y}{2}$ 的每一位为 $0$ 或 $1$。</p><p>则 $\dfrac{x}{2}, \dfrac{y}{2}$ 可以取遍 $[0, 1]$ 中所有实数。</p><p>则 $x + y$ 可以取遍 $[0, 2]$ 中所有实数。</p><h3 id="题-4"><a href="#题-4" class="headerlink" title="题 4"></a>题 4</h3><h4 id="1-1"><a href="#1-1" class="headerlink" title="(1)"></a>(1)</h4><p>已知集合 $M = \{2, |a|\}$ 是全集 $U = \{2, 3, a^2 + 2a + 2\}$ 的一个子集，且 $\complement_U M = \{5\}$，则实数 $a$ 的值等于？</p><ul><li>比高考题还简单。</li></ul><p>解：$-3$。</p><h4 id="2-1"><a href="#2-1" class="headerlink" title="(2)"></a>(2)</h4><p>已知全集 $I = \mathbb{Z}, M = \{x \ | \ x = 2n, n \in \mathbb{Z}\}, S = \{x \ | \ x = 3n, n \in \mathbb{Z}\}$，则 $M \cap \complement_{\mathbb{Z}} S$ 为？</p><ul><li>比高考题还简单。</li></ul><p>解：为 $\{x \ | \ x = 6n \pm 2, n \in \mathbb{Z} \}$。</p><h4 id="3"><a href="#3" class="headerlink" title="(3)"></a>(3)</h4><p>设全集 $U = \{x \ | \ x = 2n - 1, n \in \mathbb{Z}, n \le 7\},$ $A \cap (\complement_U B) = \{3, 7\}, (\complement_U A) \cap B = \{9, 13\},$ $(\complement_U A) \cap (\complement_U B) = \{1, 11\}$，求 $A, B$。</p><ul><li>比高考题还简单</li></ul><p>解：$A = \{3, 5, 7\}, B = \{5, 9, 13\}$。</p><h3 id="题-5"><a href="#题-5" class="headerlink" title="题 5"></a>题 5</h3><p>设集合 $S_n = \{1, 2, \cdots, n\}$，若 $Z$ 是 $S_n$ 的子集，把 $Z$ 中所有数的和称为 $Z$ 的“容量”（规定空集的容量为 $0$）。若 $Z$ 的容量为奇（偶）数，则称 $Z$ 为 $S_n$ 的奇（偶）子集。</p><ul><li>感觉是唯一有难度的题</li><li>可以使用归纳法来不讲武德型证明</li></ul><h4 id="1-2"><a href="#1-2" class="headerlink" title="(1)"></a>(1)</h4><p>求证：$S_n$ 的奇子集与偶子集个数相等；</p><p>证明：设 $A = S \setminus \{1\}$，则 $A$ 中的偶子集并上 $\{1\}$ 以后为奇子集，奇子集并上 $\{1\}$ 为偶子集。</p><p>所以 $S_n$ 的奇子集和偶子集一一对应，个数相等。</p><h4 id="2-2"><a href="#2-2" class="headerlink" title="(2)"></a>(2)</h4><p>求证：当 $n \ge 3$ 时，$S_n$ 的所有奇子集的容量之和与所有偶子集的容量之和相等。</p><p>证明与 (1) 类似，只需要对 $\{3\}$ 再讨论一下即可。</p><h4 id="3-1"><a href="#3-1" class="headerlink" title="(3)"></a>(3)</h4><p>当 $n \ge 3$ 时，求 $S_n$ 的所有奇子集的容量之和。</p><p>解：由 (2) 的结论可知为 $\dfrac{\sum \limits_{i = 1} ^ n i \cdot 2 ^ {n - 1}}{2} = n(n + 1) \cdot 2 ^ {n - 3}$。</p><h3 id="题-6"><a href="#题-6" class="headerlink" title="题 6"></a>题 6</h3><p>设 $M = \{1, 2, \cdots, 2019\}$，$A$ 是 $M$ 的子集，且满足条件：当 $x \in A$ 时，$10x \notin A$。则 $A$ 中元素个数最多是？</p><ul><li><a href="https://www.luogu.com.cn/problem/P1978" target="_blank" rel="noopener">洛谷 P1978 集合</a></li></ul><p>解：若 $x \in A$，则 $10x \notin A, 100x \in A, 1000x \notin A$。</p><p>则答案为 $2019 - 201 + 20 - 2 = 1836$。</p><h3 id="题-7"><a href="#题-7" class="headerlink" title="题 7"></a>题 7</h3><p>把集合 $\{1, 2, \cdots, 10^6\}$ 划分成两个不相交的子集，一个是所有可以表示为一个完全平方数与一个完全立方数之和的数所成的子集，另一个是集合中所有其余的数所成的子集。问哪一个子集元素较多？说明理由。</p><p>解：设 $A = \{x \ | \ x = a^2, x \le 10^6\}, B = \{x \ | \ x = a^3, x \le 10^6\}, S = \{x \ | \ x = a + b, a \in A, b \in B\}$。</p><p>则 $|A| = 1000, |B| = 100$。</p><p>则 $|S| \le 1000 \times 100 = 10^5, |\{1, 2, \cdots, 10^6\} \setminus S \ | \ge 10^5$。</p><h3 id="题-8"><a href="#题-8" class="headerlink" title="题 8"></a>题 8</h3><p>证明以下集合的元素个数相等：</p><h4 id="1-3"><a href="#1-3" class="headerlink" title="(1)"></a>(1)</h4><p>$(0, 1)$ 和 $\mathbb{R} ^ +$。 </p><p>证明：$\forall x \in (0, 1), \dfrac{x}{1 - x} \in \mathbb{R} ^ +$。$\forall x \in \mathbb{R} ^ +, \dfrac{x}{x + 1} \in (0, 1)$。</p><h4 id="2-3"><a href="#2-3" class="headerlink" title="(2)"></a>(2)</h4><p>$[0, 1]$ 和 $(0, 1)$。</p><p>证明：$f(x) : [0, 1] \to (0, 1) = \begin{cases}x, x \ne \dfrac{1}{2^k}\\\dfrac{1}{2}, x = 1\\0, x = 0, \\\dfrac{1}{4}x, x = \dfrac{1}{2^k}\end{cases}, k \in \mathbb{N} ^ *$。</p><h4 id="3-2"><a href="#3-2" class="headerlink" title="(3)"></a>(3)</h4><p>$\{(x, y) \ | \ x ^ 2 + y ^ 2 = 1\}$ 和 $\mathbb{R}$。</p><p>证明：原集合可写为 $\{(\cos \theta, \sin \theta) \ | \ \theta \in (0, 2\pi]\}$。</p><p>之后的证明同 (1)。</p><p>或者由 $\tan \theta = \dfrac{y}{x}$，且 $\tan \theta$ 值域为 $\mathbb{R}$。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> MO </category>
-          
-          <category> 集合 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 集合 </tag>
             
         </tags>
       
