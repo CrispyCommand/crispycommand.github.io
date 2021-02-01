@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>一些不等式的证明</title>
+      <link href="/2021/01/29/%E4%B8%80%E4%BA%9B%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E8%AF%81%E6%98%8E/"/>
+      <url>/2021/01/29/%E4%B8%80%E4%BA%9B%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E8%AF%81%E6%98%8E/</url>
+      
+        <content type="html"><![CDATA[<p>抄书。</p><a id="more"></a><h3 id="Jacobsthai-不等式"><a href="#Jacobsthai-不等式" class="headerlink" title="Jacobsthai 不等式"></a>Jacobsthai 不等式</h3><p>设 $x, y \in \mathbb{R}^+, n \in \mathbb{N}^*$, 则</p><p>$$<br>x^{n + 1} + ny^{n + 1} \ge (n + 1)y^nx<br>$$</p><p>当且仅当 $x = y$ 时取到等号.</p><h4 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h4><p>显然有<br>$$<br>(x - y)(x^k - y^k) \ge 0<br>$$</p><p>则<br>$$<br>\begin{aligned}<br>    x^{n + 1} + ny^{n + 1} - (n + 1)xy^n &amp; = x(x^n - y^n) - ny^n(x - y) \\<br>    &amp; = (x - y)[x(x^{n - 1} + x^{n - 2}y + \cdots + y^{n - 1}) - ny^n] \\<br>    &amp; = (x - y)[(x^n - y^n) + (x^{n - 1} - y^{n - 1})y + \cdots + (x - y)y^{n - 1}] \\<br>    &amp; \ge 0<br>\end{aligned}<br>$$</p><h3 id="Bernoulli-不等式"><a href="#Bernoulli-不等式" class="headerlink" title="Bernoulli 不等式"></a>Bernoulli 不等式</h3><p>设 $x &gt; 0, n \ge 1$, 则有 $x^n \ge 1 + n(x - 1)$.</p><h4 id="证明-1"><a href="#证明-1" class="headerlink" title="证明"></a>证明</h4><p>在 Jacobsthai 不等式中取 $y = 1$ 即可.</p><h3 id="Jensen-不等式"><a href="#Jensen-不等式" class="headerlink" title="Jensen 不等式"></a>Jensen 不等式</h3><p>若函数 $f(x) : (a, b) \to \mathbb{R}$ 满足</p><p>$$<br>f(\dfrac{x + y}{2}) \ge \dfrac{f(x) + f(y)}{2}, x, y \in (a, b)<br>$$</p><p>则有</p><p>$$<br>f(\dfrac{\sum x_i}{n}) \ge \dfrac{\sum f(x_i)}{n}, x_i \in (a, b)<br>$$</p><h4 id="证明-2"><a href="#证明-2" class="headerlink" title="证明"></a>证明</h4><p>当 $n = 1, 2$ 时显然成立.</p><p>设当 $n = k$ 时成立. 对于 $n = k + 1$, 有</p><p>$$<br>A_{k + 1} = \dfrac{a_1 + a_2 + \cdots + a_k}{2k} + \dfrac{a_{k + 1} + (k - 1)A_{k + 1}}{2k}<br>$$</p><p>设 $B = \dfrac{a_{k + 1} + (k - 1)A_{k + 1}}{k}$.</p><p>则有</p><p>$$<br>\begin{aligned}<br>    f(A_{k + 1}) &amp;= f(\dfrac{A_{k} + B}{2}) \\<br>    &amp;\ge \dfrac{1}{2} [f(A_k) + f(B)] \\<br>    &amp;\ge \dfrac{1}{2} [\dfrac{1}{k}(f(a_1) + f(a_2) + \cdots + f(a_{k})) + \dfrac{1}{k}(f(a_{k + 1}) + (k - 1)f(A_{k + 1}))]<br>\end{aligned}<br>$$</p><p>所以</p><p>$$<br>f(\dfrac{a_1 + a_2 + \cdots + a_{k + 1}}{k + 1}) \ge \dfrac{f(a_1) + f(a_2) + \cdots + f(a_{k + 1})}{k + 1}<br>$$</p><p>我们称满足此式的函数为凹函数，且若 $f$ 二阶可导, 当 $\dfrac{\mathrm{d}}{\mathrm{d}x^2} f^2(x) \le 0$ 时, $f$ 为凹函数.</p><p>从图像上直观理解一下, 类似 $f(x) = \log x$ 之类的函数即为凹函数.</p><p>实际上, 我们有加权的 Jensen 不等式:</p><p>$$<br>\sum (\dfrac{1}{p_i}f(x_i)) \le f(\sum \dfrac{x_i}{p_i})(\sum \dfrac{1}{p_i} = 1)<br>$$</p><h3 id="Young-不等式"><a href="#Young-不等式" class="headerlink" title="Young 不等式"></a>Young 不等式</h3><p>对于 $x, y &gt; 0$, 有</p><p>$$<br>x^{\frac{1}{p}}y^{\frac{1}{q}} \le \dfrac{1}{p}x + \dfrac{1}{q}y(\dfrac{1}{p} + \dfrac{1}{q} = 1)<br>$$</p><p>且仅当 $x = y$ 时取到等号.</p><h3 id="平均值不等式"><a href="#平均值不等式" class="headerlink" title="平均值不等式"></a>平均值不等式</h3><p>假设 $a_1, a_2, a_3, \cdots, a_n$ 为 $n$ 个非负实数, 它们的算术平均值记为 $A_n = \dfrac{\sum a_i}{n}$, 几何平均值记为 $G_n = \sqrt[n]{\prod a_i} = (\prod a_i) ^ {\frac{1}{n}}$.</p><p>则有 $A_n \ge G_n$, 当且仅当 $a_1 = a_2 = a_3 = \cdots = a_n$ 时取到等号.</p><h4 id="证法一"><a href="#证法一" class="headerlink" title="证法一"></a>证法一</h4><p>当 $n = 2$ 时显然成立.</p><p>假设对 $n = k$ 时命题成立, 即 $A_k \ge G_k$.</p><p>当 $n = k + 1$ 时, 显然在 $A_n$ 与 $G_n$ 中, $a_i$ 的顺序对结果无影响, 设 $a_1 = \min \{a_1, a_2, \cdots, a_{k + 1}\}, a_{k + 1} = \max \{a_1, a_2, \cdots, a_{k + 1} \}$, 则有 $a_1 \le A_{k + 1} \le a_{k + 1}$. </p><p>即<br>$$<br>A_{k + 1}(a_1 + a_{k + 1} - A_{k + 1}) - a_1a_{k + 1} = (a_1 - A_{k + 1})(A_{k + 1} - a_{k + 1}) \ge 0<br>$$</p><p>则有<br>$$<br>A_{k + 1}(a_1 + a_{k + 1} - A_{k + 1}) \ge a_1a_{k + 1}<br>$$</p><p>对于 $k$ 个正数，由归纳假设有 $A_n \ge G_n$.</p><p>也就是<br>$$<br>\dfrac{a_2 + a_3 + \cdots + a_k + (a_1 + a_{k + 1} - A_{k + 1})}{k} \ge \sqrt[k]{a_2a_3 \cdots a_k(a_1 + a_{k + 1} - A_{k + 1})}<br>$$</p><p>又<br>$$<br>\dfrac{a_2 + a_3 + \cdots + a_k + (a_1 + a_{k + 1} - A_{k + 1})}{k} = \dfrac{(k + 1)A_{k + 1} - A_{k + 1}}{k} = A_{k + 1}<br>$$</p><p>则<br>$$<br>A_{k + 1}^k \ge a_2 a_3 \cdots a_k(a_1 + a_{k + 1} - A_{k + 1})<br>$$</p><p>两边同乘 $A_{k + 1}$, 得<br>$$<br>A_{k + 1}^{k + 1} \ge a_2a_3 \cdots a_kA_{k + 1}(a_1 + a_{k + 1} - A_{k + 1})\ge a_2a_3\cdots a_k(a_1a_{k + 1}) = G_{k + 1}^{k + 1}<br>$$</p><p>则 $A_{k + 1} \ge G_{k + 1}$.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MO </category>
+          
+          <category> 代数 </category>
+          
+          <category> 不等式 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 不等式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>一道解方程</title>
       <link href="/2021/01/09/%E4%B8%80%E9%81%93%E8%A7%A3%E6%96%B9%E7%A8%8B/"/>
       <url>/2021/01/09/%E4%B8%80%E9%81%93%E8%A7%A3%E6%96%B9%E7%A8%8B/</url>
